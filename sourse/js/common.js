@@ -59,6 +59,24 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
 	});
+	const mainSlider = new Swiper(".main-slider--js", {
+		slidesPerView: 1,
+		direction: "vertical",
+		speed: 500,
+
+		effect: "creative",
+		creativeEffect: {
+			prev: {opacity: 1, translate: [0, 0, -1]},
+			next: {opacity: 1, translate: [0, "100%", 0]},
+		},
+		keyboard: {enabled: !0, onlyInViewport: !0},
+		mousewheel: {
+			sensitivity: 1,
+			thresholdDelta: 10,
+			enabled: true,
+			forceToAxis: true,
+		},
+	});
 }
 if (document.readyState !== "loading") {
 	eventHandler();
