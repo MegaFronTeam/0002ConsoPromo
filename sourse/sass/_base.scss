@@ -449,13 +449,13 @@ iframe {
 }
 .main-slider--js {
 	// TODO: remove comment
-	height: 100vh;
+	height: min(100vh, 100dvh);
 }
 .section-slide {
-	min-height: 100vh;
+	height: min(100vh, 100dvh);
 	background-color: #98c3d1;
 	& > .section {
-		min-height: 100vh;
+		height: min(100vh, 100dvh);
 	}
 	&:nth-child(odd) {
 		background-color: #f8f9fa;
