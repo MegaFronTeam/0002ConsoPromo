@@ -1,9 +1,24 @@
 mixin sCards(data)
 	// start sCards
-	+b.SECTION.sCards.section#sCards&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sCards
-				
-			+e.row.row
+	+b.SECTION.sCards.section&attributes(attributes) 
+		+e.row
+			+card(1,'коллекция 1')
+			+card(2,'коллекция 2')
 	// end sCards
+
+mixin card(i,t)
+	// start card 
+	+b.card
+		+e.img(href="#")
+			+b.img(src=`img/card-${i}.jpg`, alt=`card${i}`)
+		+e.body
+			+e.title(href="#")
+				= t
+			+e.text Смотреть
+
+mixin sCards2(data)
+	// start sCards
+	+b.SECTION.sCards.section&attributes(attributes) 
+		+e.row
+			+card(3,'только для тебя')
+			+card(4,'аксессуары')

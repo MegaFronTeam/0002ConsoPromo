@@ -115,6 +115,11 @@ main {
 	@include bgs;
 	padding-top: var(--sPT);
 	padding-bottom: var(--sPB);
+	h2 {
+		font-size: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
 }
 
 .section-title {
@@ -443,11 +448,15 @@ iframe {
 	}
 }
 .main-slider--js {
+	// TODO: remove comment
 	height: 100vh;
 }
 .section-slide {
-	height: 100vh;
+	min-height: 100vh;
 	background-color: #98c3d1;
+	& > .section {
+		min-height: 100vh;
+	}
 	&:nth-child(odd) {
 		background-color: #f8f9fa;
 	}

@@ -1,9 +1,7 @@
-mixin fullImage(data)
+mixin fullImage(i, title)
 	// start fullImage
-	+b.SECTION.fullImage.section#fullImage&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 fullImage
-				
-			+e.row.row
-	// end fullImage
+	+b.SECTION.fullImage.section#fullImage&attributes(attributes).bg-wrap
+		+img(`img/frame-${i}.jpg`, 'bg').img-bg 
+		+b.section-title.text-center
+			h2= title
+			+e.link(href="#") подробнее 

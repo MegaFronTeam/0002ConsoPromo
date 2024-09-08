@@ -18,20 +18,21 @@ block pagecontent
 	
 	
 	+parts('header')
-	main
-		+b.main-slider--js.swiper
-			.swiper-wrapper 
-				+b.section-slide.swiper-slide
-					+headerBlock 
-				+b.section-slide.swiper-slide
-					+sCards
-				+b.section-slide.swiper-slide
-					+fullImage
-				+b.section-slide.swiper-slide
-					+sCards
-				+b.section-slide.swiper-slide
-					+fullImage
-				+b.section-slide.swiper-slide
-					+fullImage
-				+b.section-slide.swiper-slide
-					+footer
+	main 
+		+b.section-slider
+			+b.section-slide
+				+headerBlock 
+			+b.section-slide
+				+sCards
+			+b.section-slide.d-lg-none
+			+b.section-slide
+				+fullImage(1,'лето 2024')
+			+b.section-slide
+				+fullImage(2,'лимированная серия')
+			+b.section-slide
+				+sCards2
+			+b.section-slide.d-lg-none
+			+b.section-slide
+				+fullImage(3,'лимированная серия')
+			+b.section-slide
+				+footer
