@@ -1,34 +1,49 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js
-		+b.toggle-menu-mobile--js
-			span
+		+e.container
+			+menu-toggle()
 		+e.inner
-			+mnu()
+			+e.container
+				+mnu()
+		+e.footer
+			+e.container
+				.small Подписаться на новости
+				+b.icons-group
+					+e.icon-wrap(href='#'): +icon('telegram')
+					+e.icon-wrap(href='#'): +icon('vk')
+					+e.icon-wrap(href='#'): +icon('youtube')
+					+e.icon-wrap(href='#'): +icon('dzen')
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			+e.row.row
-				.col-4
-				.col.order-lg-0.order-last
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
-					
-				.col-auto.d-lg-none
+		+b.logo(href="/")
+			include logo.svg
+		.container-fluid
+			+e.row.row 
+				.col-auto
 					+menu-toggle()
+				.col.d-none.d-xl-block
+					nav
+						ul
+							li: a(href="#") Подарочная карта
+							li: a(href="#") look-book
+							li: a(href="#") Магазины
+				.col-xl-auto.col
+					+b.icon-btn--search 
+						+icon("search")
+				.col-auto
+					+b.icon-btns  
+						+b.icon-btn 
+							+icon("heart")
+							+e.count 10
+						+b.icon-btn 
+							+icon("cart")
+						+b.icon-btn 
+							+icon("profile")
+	+mob-mnu()
+					
 	// end top-nav

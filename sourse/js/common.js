@@ -95,19 +95,43 @@ function eventHandler() {
 
 	let navs = gsap.utils.toArray("nav a");
 
+	const topNav = document.querySelector(".top-nav");
+
 	gsap.utils.toArray(".section-slide").forEach((panel, i) => {
 		let trigger = ScrollTrigger.create({
 			trigger: panel,
 			start: "top top",
-			// end: "80% bottom",
 			pin: true,
 			pinSpacing: false,
 			stagger: 0.5,
-			snap: {
-				snapTo: 0.1,
-				duration: {min: 0.1, max: 0.4},
-				ease: "easeIn",
+			onEnter: () => {
+				console.log("onEnter", panel.classList.contains("section-slide--dark"));
+
+				if (panel.classList.contains("section-slide--dark")) {
+					topNav.classList.add("top-nav--white");
+				}
 			},
+			onLeave: () => {
+				if (panel.classList.contains("section-slide--dark")) {
+					topNav.classList.remove("top-nav--white");
+				}
+			},
+			onEnterBack: () => {
+				if (panel.classList.contains("section-slide--dark")) {
+					topNav.classList.add("top-nav--white");
+				}
+			},
+			onLeaveBack: () => {
+				if (panel.classList.contains("section-slide--dark")) {
+					topNav.classList.remove("top-nav--white");
+				}
+			},
+
+			// snap: {
+			// 	snapTo: 0.15,
+			// 	duration: {min: 0.1, max: 0.4},
+			// 	ease: "ease",
+			// },
 			// snap: true,
 			// ease: "none",
 
@@ -115,6 +139,20 @@ function eventHandler() {
 			// end: "+=199%",
 			// onToggle: self => self.isActive && !scrollTween && goToSection(i),
 		});
+
+		// gsap.from(panel, {
+		// 	// opacity: 0,
+		// 	y: 50,
+		// 	duration: 1,
+		// 	stagger: 0.2, // Delay of 0.2 seconds between each element's animation
+		// 	ease: "power2.out",
+		// 	scrollTrigger: {
+		// 		trigger: panel,
+		// 		start: "top 80%",
+		// 		end: "bottom 20%",
+		// 		toggleActions: "play none none reverse",
+		// 	},
+		// });
 
 		let nav = navs[i];
 
@@ -125,6 +163,16 @@ function eventHandler() {
 		// 		scrollTo: trigger.start,
 		// 	});
 		// });
+	});
+	const menu = document.querySelector(".menu-mobile .menu");
+	menu.addEventListener("click", function (e) {
+		const targetLi = e.target.closest("li:has(ul)");
+		if (e.target.closest("a")) return;
+		if (targetLi) {
+			console.log("target", e.target);
+
+			targetLi.classList.toggle("menu__item--open");
+		}
 	});
 }
 

@@ -1,5 +1,6 @@
 extends ../layout/main.pug
 
+include ../blocks/top-nav/_top-nav.pug
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug 
 include ../blocks/sCards/_sCards.pug
@@ -17,22 +18,23 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+top-nav().top-nav--white
 	main 
 		+b.section-slider
-			+b.section-slide
-				+headerBlock 
+			+b.section-slide--dark
+				//- +headerBlock 
+				+fullImage(1,'лето 2024')
 			+b.section-slide
 				+sCards
 			+b.section-slide.d-lg-none
-			+b.section-slide
+			+b.section-slide--dark
 				+fullImage(1,'лето 2024')
-			+b.section-slide
+			+b.section-slide--dark
 				+fullImage(2,'лимированная серия')
 			+b.section-slide
 				+sCards2
 			+b.section-slide.d-lg-none
-			+b.section-slide
+			+b.section-slide--dark
 				+fullImage(3,'лимированная серия')
 			+b.section-slide
 				+footer

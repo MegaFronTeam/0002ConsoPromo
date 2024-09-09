@@ -1,14 +1,27 @@
 
 mixin mnu()
-	nav
-		ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-			each link in nav
-				li.menu-item(itemprop="item" ): a(href= link.url itemprop="url")= link.name
-				if link.subnav
-					li.menu-item.menu-item-has-children
-						a(href="#" itemprop="url") О нас
-						ul.sub-menu
-							each sublink in link.subnav
-								li.menu-item(itemprop="item" ): a(href= sublink.url itemprop="url")= sublink.name
 
+	nav
+		.main-mnu
+			ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+				each link in nav
+					li.menu-item
+						a(href="#" itemprop="url")= link.name
+						if link.subnav
+							ul.sub-menu
+								each sublink in link.subnav 
+									li.menu-item
+										a(href="#" itemprop="url")= sublink.name
+										if sublink.subnav
+											ul.sub-menu
+												each sublink2 in sublink.subnav
+													li.menu-item(itemprop="item" ): a(href= sublink2.url itemprop="url")= sublink2.name 
+		.d-lg-none
+			ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+				li.menu-item
+					a(href="#" itemprop="url") Подарочная карта
+				li.menu-item
+					a(href="#" itemprop="url") look-book
+				li.menu-item
+					a(href="#" itemprop="url") Магазины
 //- menu

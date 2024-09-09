@@ -1,16 +1,23 @@
+:root {
+	--base-color: #{$body-color};
+	--base-color-inverse: #fff;
+}
 .top-nav {
 	// --sPT: #{rem()};
 	left: 0;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	position: fixed;
+	padding-block: 1rem;
 	// --sPB: #{rem()};
 	z-index: 100;
+	color: var(--base-color);
 	// --sTPB: #{rem()};
 	&__row {
-		// --bs-gutter-x: #{rem()};
+		--bs-gutter-x: #{rem(24)};
 		// @include media-breakpoint-up(md) {
 		--bs-gutter-y: var(--bs-gutter-x);
+		align-items: center;
 		// }
 	}
 	.section-title {
@@ -21,6 +28,35 @@
 	}
 	&__slide {
 		height: auto;
+	}
+	ul {
+		display: flex;
+		gap: #{rem(24)};
+		margin: 0;
+		a {
+			color: var(--base-color);
+			text-transform: uppercase;
+		}
+
+		list-style: none;
+	}
+	.container-fluid {
+		--bs-gutter-x: #{rem(56)};
+	}
+	.logo {
+		@include a-cent1();
+		display: flex;
+		color: var(--base-color);
+		[fill="white"] {
+			fill: currentColor;
+		}
+		@include media-breakpoint-down(sm) {
+			svg {
+				height: 20px;
+			}
+		}
+
+		text-align: center;
 	}
 
 	@include media-breakpoint-up(sm) {
@@ -37,4 +73,44 @@
 
 	@include media-breakpoint-down(xs) {
 	}
+}
+
+.top-nav--white {
+	--base-color: #fff;
+	--base-color-inverse: #{$body-color};
+}
+
+.icon-btn {
+	display: inline-block;
+	position: relative;
+	@include mt;
+	svg {
+		fill: none;
+		stroke: currentColor;
+	}
+	&__count {
+		@include mt;
+		width: rem(14);
+		height: rem(14);
+		position: absolute;
+		border-radius: 50%;
+		line-height: 1.2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: rem(12);
+		right: rem(-2);
+		bottom: rem(-2);
+		background-color: var(--base-color);
+		color: var(--base-color-inverse);
+		letter-spacing: -0.02em;
+	}
+	&--search {
+		margin-right: rem(-10);
+	}
+}
+
+.icon-btns {
+	display: flex;
+	gap: 1rem;
 }
