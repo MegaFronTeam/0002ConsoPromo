@@ -7,8 +7,33 @@ function eventHandler() {
 	// const $ = jQuery;
 	JSCCommon.init();
 
+	function createCards() {
+		const sectionCards = document.querySelectorAll(".sCards");
+		if (sectionCards) {
+			if (window.matchMedia("(max-width: 992px)").matches) {
+				sectionCards.forEach(section => {
+					section.parentElement.insertAdjacentHTML(
+						"afterend",
+						`<div class="section-slide section-slide--dub"></div>`
+					);
+					const nextParentSection = section.parentElement.nextElementSibling;
+
+					// const cards = section.querySelectorAll(".card");
+					nextParentSection.insertAdjacentHTML("afterbegin", section.outerHTML);
+				});
+			} else {
+				const dubSections = document.querySelectorAll(".section-slide--dub");
+				if (dubSections)
+					dubSections.forEach(section => {
+						section.remove();
+					});
+			}
+		}
+	}
+
 	function whenResize() {
 		JSCCommon.setFixedNav();
+		createCards();
 	}
 
 	window.addEventListener(
@@ -80,90 +105,87 @@ function eventHandler() {
 	// 	},
 	// });
 	// mainSlider.slideTo(6);
-	const sectionCards = document.querySelectorAll(".sCards");
-	if (sectionCards) {
-		sectionCards.forEach(section => {
-			const nextParentSection = section.parentElement.nextElementSibling;
-			console.log("next", nextParentSection);
+	function animateMainPage() {
+		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-			// const cards = section.querySelectorAll(".card");
-			nextParentSection.insertAdjacentHTML("afterbegin", section.outerHTML);
+		let panels = gsap.utils.toArray(".section-slide"),
+			observer = ScrollTrigger.normalizeScroll(true),
+			scrollTween;
+
+		// on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
+		document.addEventListener(
+			"touchstart",
+			e => {
+				if (scrollTween) {
+					e.preventDefault();
+					e.stopImmediatePropagation();
+				}
+			},
+			{capture: true, passive: false}
+		);
+
+		const topNav = document.querySelector(".top-nav");
+
+		function goToSection(i) {
+			scrollTween = gsap.to(window, {
+				scrollTo: {y: i, autoKill: false},
+				onStart: () => {
+					observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
+					observer.enable();
+				},
+				duration: 0.5,
+				ease: "easeInOut",
+				onComplete: () => (scrollTween = null),
+				overwrite: true,
+			});
+		}
+
+		panels.forEach((panel, i) => {
+			ScrollTrigger.create({
+				trigger: panel,
+				start: "top top",
+				pin: true,
+				pinSpacing: false,
+			});
+
+			ScrollTrigger.create({
+				trigger: panel,
+				start: "top bottom",
+				end: "+=100%",
+				onEnter: self => {
+					self.isActive && !scrollTween && goToSection(self.end);
+
+					if (self.isActive)
+						if (self.trigger.classList.contains("section-slide--dark")) {
+							topNav.classList.add("top-nav--white");
+						} else {
+							topNav.classList.remove("top-nav--white");
+						}
+				},
+				onEnterBack: self => {
+					self.isActive && !scrollTween && goToSection(self.start);
+
+					if (self.isActive)
+						if (panels[i - 1].classList.contains("section-slide--dark")) {
+							topNav.classList.add("top-nav--white");
+						} else {
+							topNav.classList.remove("top-nav--white");
+						}
+				},
+
+				// onEnterBack: self => self.isActive && !scrollTween && goToSection(i),
+			});
 		});
+		// ScrollTrigger.create({
+		// 	start: 0,
+		// 	end: "max",
+		// 	snap: 1 / (panels.length - 1),
+		// });
 	}
 
-	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+	animateMainPage();
+	// just in case the user forces the scroll to an inbetween spot (like a momentum scroll on a Mac that ends AFTER the scrollTo tween finishes):
 
-	let navs = gsap.utils.toArray("nav a");
-
-	const topNav = document.querySelector(".top-nav");
-
-	gsap.utils.toArray(".section-slide").forEach((panel, i) => {
-		let trigger = ScrollTrigger.create({
-			trigger: panel,
-			start: "top top",
-			pin: true,
-			pinSpacing: false,
-			stagger: 0.5,
-			onEnter: () => {
-				console.log("onEnter", panel.classList.contains("section-slide--dark"));
-
-				if (panel.classList.contains("section-slide--dark")) {
-					topNav.classList.add("top-nav--white");
-				}
-			},
-			onLeave: () => {
-				if (panel.classList.contains("section-slide--dark")) {
-					topNav.classList.remove("top-nav--white");
-				}
-			},
-			onEnterBack: () => {
-				if (panel.classList.contains("section-slide--dark")) {
-					topNav.classList.add("top-nav--white");
-				}
-			},
-			onLeaveBack: () => {
-				if (panel.classList.contains("section-slide--dark")) {
-					topNav.classList.remove("top-nav--white");
-				}
-			},
-
-			snap: {
-				snapTo: 1,
-				duration: {min: 0.1, max: 0.4},
-				ease: "ease",
-			},
-			// snap: true,
-			// ease: "none",
-
-			// scrub: true,
-			// end: "+=199%",
-			// onToggle: self => self.isActive && !scrollTween && goToSection(i),
-		});
-
-		// gsap.from(panel, {
-		// 	// opacity: 0,
-		// 	y: 50,
-		// 	duration: 1,
-		// 	stagger: 0.2, // Delay of 0.2 seconds between each element's animation
-		// 	ease: "power2.out",
-		// 	scrollTrigger: {
-		// 		trigger: panel,
-		// 		start: "top 80%",
-		// 		end: "bottom 20%",
-		// 		toggleActions: "play none none reverse",
-		// 	},
-		// });
-
-		let nav = navs[i];
-
-		// nav.addEventListener("click", function (e) {
-		// 	e.preventDefault();
-		// 	gsap.to(window, {
-		// 		duration: 1,
-		// 		scrollTo: trigger.start,
-		// 	});
-		// });
-	});
 	const menu = document.querySelector(".menu-mobile .menu");
 	menu.addEventListener("click", function (e) {
 		const targetLi = e.target.closest("li:has(ul)");
