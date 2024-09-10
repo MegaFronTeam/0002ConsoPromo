@@ -2,9 +2,9 @@
 	--animate-delay: 1.2s;
 	--bs-body-font-size: #{$em-base};
 
-	--sPT: #{rem(80 * 0.5)};
-	--sPB: #{rem(90 * 0.5)};
-	--sTPB: #{rem(40 * 0.5)};
+	// --sPT: #{rem(80 * 0.5)};
+	// --sPB: #{rem(90 * 0.5)};
+	// --sTPB: #{rem(40 * 0.5)};
 
 	--fancybox-content-color: var(--bs-body-color);
 	--swiperArrowSize: #{rem(68)};
@@ -26,11 +26,11 @@
 	//  --carousel-button-svg-stroke-width: 2.5;
 	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 
-	@include media-breakpoint-up(md) {
-		--sPT: #{rem(120)};
-		--sPB: #{rem(65)};
-		--sTPB: #{rem(40)};
-	}
+	// @include media-breakpoint-up(md) {
+	--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(120)});
+	--sPB: calc(env(safe-area-inset-bottom, 0px) + 65px);
+	--sTPB: #{rem(40)};
+	// }
 }
 .fancybox__container {
 	--fancybox-bg: rgba(58, 59, 60, 0.77);
