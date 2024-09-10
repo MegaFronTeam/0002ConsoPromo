@@ -27,7 +27,7 @@
 	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 
 	// @include media-breakpoint-up(md) {
-	--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(30)});
+	--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(70)});
 	@include media-breakpoint-up(md) {
 		--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(120)});
 	}
