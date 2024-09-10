@@ -143,8 +143,14 @@
 		}
 	}
 
+	.dd-group + .dd-group {
+		margin-top: rem(20);
+		margin-bottom: rem(20);
+	}
 	.dd-group {
-		padding-bottom: 3rem;
+		@include media-breakpoint-up(md) {
+			padding-bottom: 3rem;
+		}
 		&__head {
 			text-transform: uppercase;
 
