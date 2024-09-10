@@ -453,11 +453,34 @@ iframe {
 }
 .section-slide {
 	height: 100vh;
-	background-color: #98c3d1;
+	width: 100%;
+	z-index: 2;
 	& > .section {
 		height: 100vh;
 	}
-	&:nth-child(odd) {
-		background-color: #f8f9fa;
-	}
+}
+.trigger {
+	min-height: 100vh;
+	width: 100%;
+}
+
+// .triggers {
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0;
+// 	width: 50px;
+// }
+
+.section-slider {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.main-slider {
+	width: 100%;
+}
+
+.overflow-y-auto {
+	overflow-y: auto;
 }

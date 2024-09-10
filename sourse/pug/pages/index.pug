@@ -18,23 +18,23 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+top-nav().top-nav--white
-	main 
-		+b.section-slider
-			+b.section-slide--dark
+	+top-nav().top-nav--whiteb
+	+b.main-slider--js.swiper
+		.swiper-wrapper 
+			+b.section-slide--dark.swiper-slide
 				//- +headerBlock 
 				+fullImage(1,'лето 2024')
-			+b.section-slide
+			+b.section-slide.swiper-slide
 				+sCards
-			+b.section-slide.d-lg-none
-			+b.section-slide--dark
+			+b.section-slide.swiper-slide.d-lg-none
+			+b.section-slide--dark.swiper-slide
 				+fullImage(1,'лето 2024')
-			+b.section-slide--dark
+			+b.section-slide--dark.swiper-slide
 				+fullImage(2,'лимированная серия')
-			+b.section-slide
+			+b.section-slide.swiper-slide
 				+sCards2
-			+b.section-slide.d-lg-none
-			+b.section-slide--dark
+			+b.section-slide.swiper-slide.d-lg-none
+			+b.section-slide--dark.swiper-slide
 				+fullImage(3,'лимированная серия')
-			+b.section-slide
+			+b.section-slide.swiper-slide.overflow-y-auto
 				+footer
