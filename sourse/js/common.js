@@ -127,11 +127,11 @@ function eventHandler() {
 				}
 			},
 
-			// snap: {
-			// 	snapTo: 0.15,
-			// 	duration: {min: 0.1, max: 0.4},
-			// 	ease: "ease",
-			// },
+			snap: {
+				snapTo: 1,
+				duration: {min: 0.1, max: 0.4},
+				ease: "ease",
+			},
 			// snap: true,
 			// ease: "none",
 
