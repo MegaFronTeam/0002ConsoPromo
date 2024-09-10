@@ -10,30 +10,19 @@ function eventHandler() {
 	function createCards() {
 		const sectionCards = document.querySelectorAll(".sCards");
 		if (sectionCards) {
-			if (window.matchMedia("(max-width: 992px)").matches) {
-				sectionCards.forEach(section => {
-					section.parentElement.insertAdjacentHTML(
-						"afterend",
-						`<div class="section-slide section-slide--dub"></div>`
-					);
-					const nextParentSection = section.parentElement.nextElementSibling;
+			sectionCards.forEach(section => {
+				const nextParentSection = section.parentElement.nextElementSibling;
+				console.log("next", nextParentSection);
 
-					// const cards = section.querySelectorAll(".card");
-					nextParentSection.insertAdjacentHTML("afterbegin", section.outerHTML);
-				});
-			} else {
-				const dubSections = document.querySelectorAll(".section-slide--dub");
-				if (dubSections)
-					dubSections.forEach(section => {
-						section.remove();
-					});
-			}
+				// const cards = section.querySelectorAll(".card");
+				nextParentSection.insertAdjacentHTML("afterbegin", section.outerHTML);
+			});
 		}
 	}
 
+	createCards();
 	function whenResize() {
 		JSCCommon.setFixedNav();
-		createCards();
 	}
 
 	window.addEventListener(
