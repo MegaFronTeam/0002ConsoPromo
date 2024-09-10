@@ -165,11 +165,11 @@ function eventHandler() {
 				// onEnterBack: self => self.isActive && !scrollTween && goToSection(i),
 			});
 		});
-		// ScrollTrigger.create({
-		// 	start: 0,
-		// 	end: "max",
-		// 	snap: 1 / (panels.length - 1),
-		// });
+		ScrollTrigger.create({
+			start: 0,
+			end: "max",
+			snap: 1 / (panels.length - 1),
+		});
 	}
 
 	animateMainPage();
