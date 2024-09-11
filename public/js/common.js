@@ -95,8 +95,8 @@ function eventHandler() {
 			forceToAxis: true,
 		},
 		on: {
-			slideChange: function () {
-				handleSlideChange(this);
+			slideChange: function (swiper) {
+				handleSlideChange(swiper);
 
 				// if (swiper.visibleSlides.classList.contains("section-slide--dark")) {
 				// 	topNav.classList.add("top-nav--white");
@@ -108,7 +108,8 @@ function eventHandler() {
 	});
 
 	function handleSlideChange(swiper) {
-		const activeSlide = swiper.slides[swiper.activeIndex];
+		const activeSlide = swiper.visibleSlides[0];
+
 		if (activeSlide.classList.contains("section-slide--dark")) {
 			topNav.classList.add("top-nav--white");
 		} else {
