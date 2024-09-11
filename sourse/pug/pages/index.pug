@@ -20,21 +20,22 @@ block pagecontent
 	
 	+top-nav()
 	main 
-		+b.section-slider
-			+b.section-slide--dark
-				//- +headerBlock 
-				+fullImage(1,'лето 2024')
-			+b.section-slide
-				+sCards
-			+b.section-slide--mobile.d-lg-none 
-			+b.section-slide--dark
-				+fullImage(1,'лето 2024')
-			+b.section-slide--dark
-				+fullImage(2,'лимированная серия')
-			+b.section-slide
-				+sCards2
-			+b.section-slide--mobile.d-lg-none 
-			+b.section-slide--dark
-				+fullImage(3,'лимированная серия')
-			+b.section-slide
-				+footer
+		+b.main-slider--js.swiper
+			.swiper-wrapper
+				+b.section-slide--dark.swiper-slide
+					//- +headerBlock 
+					+fullImage(1,'лето 2024')
+				+b.section-slide.swiper-slide
+					+sCards
+				+b.section-slide--mobile.d-lg-none.swiper-slide
+				+b.section-slide--dark.swiper-slide
+					+fullImage(1,'лето 2024')
+				+b.section-slide--dark.swiper-slide
+					+fullImage(2,'лимированная серия')
+				+b.section-slide.swiper-slide
+					+sCards2
+				+b.section-slide--mobile.d-lg-none.swiper-slide
+				+b.section-slide--dark.swiper-slide
+					+fullImage(3,'лимированная серия')
+				+b.section-slide.swiper-slide
+					+footer

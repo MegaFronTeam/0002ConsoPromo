@@ -63,37 +63,39 @@ function eventHandler() {
 		watchOverflow: true,
 	});
 
-	const swiper4 = new Swiper(".sBanners__slider--js", {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: "auto",
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-	});
-	// const mainSlider = new Swiper(".main-slider--js", {
-	// 	slidesPerView: 1,
-	// 	direction: "vertical",
-	// 	speed: 500,
-	// 	observer: true, // Enable observer
-	// 	observeParents: true, // Enable observing parent elements
-
-	// 	effect: "creative",
-	// 	creativeEffect: {
-	// 		prev: {opacity: 1, translate: [0, 0, -1]},
-	// 		next: {opacity: 1, translate: [0, "100%", 0]},
-	// 	},
-	// 	keyboard: {enabled: !0, onlyInViewport: !0},
-	// 	mousewheel: {
-	// 		sensitivity: 1,
-	// 		thresholdDelta: 10,
-	// 		enabled: true,
-	// 		forceToAxis: true,
-	// 	},
+	// const swiper4 = new Swiper(".sBanners__slider--js", {
+	// 	// slidesPerView: 5,
+	// 	...defaultSl,
+	// 	slidesPerView: "auto",
+	// 	freeMode: true,
+	// 	loopFillGroupWithBlank: true,
+	// 	touchRatio: 0.2,
+	// 	slideToClickedSlide: true,
+	// 	freeModeMomentum: true,
 	// });
+	const mainSlider = new Swiper(".main-slider--js", {
+		slidesPerView: 1,
+		direction: "vertical",
+		speed: 500,
+		observer: true, // Enable observer
+		observeParents: true, // Enable observing parent elements
+
+		effect: "creative",
+		creativeEffect: {
+			prev: {opacity: 1, translate: [0, 0, -1]},
+			next: {opacity: 1, translate: [0, "100%", 0]},
+		},
+		keyboard: {enabled: !0, onlyInViewport: !0},
+		mousewheel: {
+			sensitivity: 1,
+			thresholdDelta: 10,
+			enabled: true,
+			forceToAxis: true,
+		},
+	});
 	// mainSlider.slideTo(6);
+	const topNav = document.querySelector(".top-nav");
+
 	function animateMainPage() {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -101,69 +103,72 @@ function eventHandler() {
 			observer = ScrollTrigger.normalizeScroll(true),
 			scrollTween;
 
-		// on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
-		// document.addEventListener(
-		// 	"touchstart",
-		// 	e => {
-		// 		if (scrollTween) {
-		// 			e.preventDefault();
-		// 			e.stopImmediatePropagation();
-		// 		}
-		// 	},
-		// 	{capture: true, passive: false}
-		// );
-
-		const topNav = document.querySelector(".top-nav");
-
-		function goToSection(i) {
-			scrollTween = gsap.to(window, {
-				scrollTo: {y: i, autoKill: false},
-				// onStart: () => {
-				// 	observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
-				// 	observer.enable();
-				// },
-				duration: 0.5,
-				ease: "easeInOut",
-				onComplete: () => (scrollTween = null),
-				overwrite: true,
-			});
-		}
-
 		panels.forEach((panel, i) => {
-			ScrollTrigger.create({
+			let trigger = ScrollTrigger.create({
 				trigger: panel,
 				start: "top top",
 				pin: true,
 				pinSpacing: false,
+				onEnter: () => {
+					console.log(
+						"onEnter",
+						panel.classList.contains("section-slide--dark")
+					);
+
+					if (panel.classList.contains("section-slide--dark")) {
+						topNav.classList.add("top-nav--white");
+					}
+				},
+				onLeave: () => {
+					if (panel.classList.contains("section-slide--dark")) {
+						topNav.classList.remove("top-nav--white");
+					}
+				},
+				onEnterBack: () => {
+					if (panel.classList.contains("section-slide--dark")) {
+						topNav.classList.add("top-nav--white");
+					}
+				},
+				onLeaveBack: () => {
+					if (panel.classList.contains("section-slide--dark")) {
+						topNav.classList.remove("top-nav--white");
+					}
+				},
+
+				snap: {
+					snapTo: 1,
+					duration: {min: 0.1, max: 0.4},
+					ease: "ease",
+				},
+				// snap: true,
+				// ease: "none",
+
+				// scrub: true,
+				// end: "+=199%",
+				// onToggle: self => self.isActive && !scrollTween && goToSection(i),
 			});
 
-			ScrollTrigger.create({
-				trigger: panel,
-				start: "top bottom",
-				end: "+=100%",
-				onEnter: self => {
-					self.isActive && !scrollTween && goToSection(self.end);
+			// gsap.from(panel, {
+			// 	// opacity: 0,
+			// 	y: 50,
+			// 	duration: 1,
+			// 	stagger: 0.2, // Delay of 0.2 seconds between each element's animation
+			// 	ease: "power2.out",
+			// 	scrollTrigger: {
+			// 		trigger: panel,
+			// 		start: "top 80%",
+			// 		end: "bottom 20%",
+			// 		toggleActions: "play none none reverse",
+			// 	},
+			// });
 
-					if (self.isActive)
-						if (self.trigger.classList.contains("section-slide--dark")) {
-							topNav.classList.add("top-nav--white");
-						} else {
-							topNav.classList.remove("top-nav--white");
-						}
-				},
-				onEnterBack: self => {
-					self.isActive && !scrollTween && goToSection(self.start);
-
-					if (self.isActive)
-						if (panels[i - 1].classList.contains("section-slide--dark")) {
-							topNav.classList.add("top-nav--white");
-						} else {
-							topNav.classList.remove("top-nav--white");
-						}
-				},
-
-				// onEnterBack: self => self.isActive && !scrollTween && goToSection(i),
-			});
+			// nav.addEventListener("click", function (e) {
+			// 	e.preventDefault();
+			// 	gsap.to(window, {
+			// 		duration: 1,
+			// 		scrollTo: trigger.start,
+			// 	});
+			// });
 		});
 		// ScrollTrigger.create({
 		// 	start: 0,
@@ -172,7 +177,7 @@ function eventHandler() {
 		// });
 	}
 
-	animateMainPage();
+	// animateMainPage();
 	// just in case the user forces the scroll to an inbetween spot (like a momentum scroll on a Mac that ends AFTER the scrollTo tween finishes):
 
 	const menu = document.querySelector(".menu-mobile .menu");
