@@ -212,6 +212,8 @@ function eventHandler() {
 			targetLi.classList.toggle("menu__item--open");
 		}
 	});
+
+	slider();
 }
 
 if (document.readyState !== "loading") {
