@@ -3,7 +3,7 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	padding-bottom: calc(100vh - 100dvh + var(--sPB));
+	padding-bottom: calc(100vh - 100svh + var(--sPB));
 	display: flex;
 	flex-direction: column;
 	color: #fff;

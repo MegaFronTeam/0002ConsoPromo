@@ -27,11 +27,11 @@
 	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 
 	// @include media-breakpoint-up(md) {
-	--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(70)});
+	--sPT: calc(#{rem(90)});
 	@include media-breakpoint-up(md) {
-		--sPT: calc(env(safe-area-inset-top, 0px) + #{rem(120)});
+		--sPT: calc(#{rem(120)});
 	}
-	--sPB: calc(env(safe-area-inset-bottom, 0px) + 65px);
+	--sPB: calc(65px);
 	--sTPB: #{rem(40)};
 	// }
 }

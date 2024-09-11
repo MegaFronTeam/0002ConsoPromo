@@ -102,26 +102,26 @@ function eventHandler() {
 			scrollTween;
 
 		// on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
-		document.addEventListener(
-			"touchstart",
-			e => {
-				if (scrollTween) {
-					e.preventDefault();
-					e.stopImmediatePropagation();
-				}
-			},
-			{capture: true, passive: false}
-		);
+		// document.addEventListener(
+		// 	"touchstart",
+		// 	e => {
+		// 		if (scrollTween) {
+		// 			e.preventDefault();
+		// 			e.stopImmediatePropagation();
+		// 		}
+		// 	},
+		// 	{capture: true, passive: false}
+		// );
 
 		const topNav = document.querySelector(".top-nav");
 
 		function goToSection(i) {
 			scrollTween = gsap.to(window, {
 				scrollTo: {y: i, autoKill: false},
-				onStart: () => {
-					observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
-					observer.enable();
-				},
+				// onStart: () => {
+				// 	observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
+				// 	observer.enable();
+				// },
 				duration: 0.5,
 				ease: "easeInOut",
 				onComplete: () => (scrollTween = null),
