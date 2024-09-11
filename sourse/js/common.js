@@ -73,6 +73,8 @@ function eventHandler() {
 	// 	slideToClickedSlide: true,
 	// 	freeModeMomentum: true,
 	// });
+	const topNav = document.querySelector(".top-nav");
+
 	const mainSlider = new Swiper(".main-slider--js", {
 		slidesPerView: 1,
 		direction: "vertical",
@@ -92,9 +94,28 @@ function eventHandler() {
 			enabled: true,
 			forceToAxis: true,
 		},
+		on: {
+			slideChange: function () {
+				handleSlideChange(this);
+
+				// if (swiper.visibleSlides.classList.contains("section-slide--dark")) {
+				// 	topNav.classList.add("top-nav--white");
+				// } else {
+				// 	topNav.classList.remove("top-nav--white");
+				// }
+			},
+		},
 	});
+
+	function handleSlideChange(swiper) {
+		const activeSlide = swiper.slides[swiper.activeIndex];
+		if (activeSlide.classList.contains("section-slide--dark")) {
+			topNav.classList.add("top-nav--white");
+		} else {
+			topNav.classList.remove("top-nav--white");
+		}
+	}
 	// mainSlider.slideTo(6);
-	const topNav = document.querySelector(".top-nav");
 
 	function animateMainPage() {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
