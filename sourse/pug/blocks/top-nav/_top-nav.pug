@@ -32,11 +32,12 @@ mixin top-nav()
 							li: a(href="#") Подарочная карта
 							li: a(href="#") look-book
 							li: a(href="#") Магазины
-				.col-xl-auto.col
-					+b.icon-btn--search 
+				+e.search-col.col-xl-auto.col.hide-ball 
+					+b.icon-btn--search
 						+icon("search")
+					+search()
 				.col-auto
-					+b.icon-btns  
+					+b.icon-btns.hide-ball  
 						+b.icon-btn 
 							+icon("heart")
 							+e.count 10

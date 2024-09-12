@@ -1,32 +1,26 @@
- 
-	  
-.soc{
+.soc {
 	@include roww(10px, m);
 	display: flex;
-	&__item{
-		text-decoration: none !important; 
+	&__item {
+		text-decoration: none !important;
 		vertical-align: middle;
 		@include mt;
 		display: grid;
 		place-items: center;
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+		&:hover {
+			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			// opacity: .6 ;
 		}
-		
 	}
-	.icon{
+	.icon {
 		font-size: rem(30);
 	}
-
-
 }
 
-
-.counter{
+.counter {
 	counter-reset: num;
 	&__item {
-		position: relative; 
+		position: relative;
 		&::before {
 			content: counter(num);
 			counter-increment: num;
@@ -34,23 +28,20 @@
 	}
 }
 
-
-
-
-.addBlock{
+.addBlock {
 	color: var(--color, #{$primary});
 	border: 1px solid;
 	border-radius: 23px;
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	input{
+	input {
 		color: inherit;
 		text-align: center;
 		border: none;
 		height: rem(45);
 	}
-	&__btn{
+	&__btn {
 		color: inherit;
 		height: rem(45);
 		position: relative;
@@ -64,24 +55,42 @@
 		// padding-right: rem(8);
 		width: rem(26);
 		&::before,
-		&::after{
-			content: '';
+		&::after {
+			content: "";
 			width: 10px;
-			height: 2px; 
+			height: 2px;
 			background-color: currentColor;
 			@include a-cent;
 			position: absolute;
 		}
-		&--plus::after{
+		&--plus::after {
 			transform: rotate(90deg);
 		}
 	}
 }
 
-
-.search-block{
-	position: relative;
-	input{
+.search-block {
+	position: absolute;
+	top: 100%;
+	@include media-breakpoint-up(xl) {
+		right: 30px;
+		left: auto;
+	}
+	// right: 30px;
+	left: 0;
+	width: 500px;
+	max-width: 100%;
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		// background-color: #fff;
+		width: 100%;
+		bottom: 0;
+		height: calc(100% + 20px);
+	}
+	input {
+		z-index: 23;
 		font-size: 14px;
 		width: 100%;
 		border: none !important;
@@ -90,13 +99,15 @@
 		padding-top: rem(14);
 		padding-bottom: rem(14);
 	}
-	.icon{
+	.icon {
 		font-size: rem(20);
+		fill: none;
+		stroke: currentColor;
 		border: none !important;
 	}
-	button{
+	button {
 		position: absolute;
-		left: 0;
+		right: 0;
 		top: 0;
 		height: 100%;
 		display: flex;
@@ -107,7 +118,7 @@
 	}
 }
 
-.breadcrumb-item{
+.breadcrumb-item {
 	width: auto;
 	// margin-right: rem(32);
 }

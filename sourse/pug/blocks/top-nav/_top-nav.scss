@@ -74,6 +74,22 @@
 
 	@include media-breakpoint-down(xs) {
 	}
+
+	&__search-col {
+		// position: relative;
+
+		.search-block {
+			display: none;
+		}
+		&:hover {
+			.search-block {
+				display: block;
+			}
+		}
+	}
+	.container {
+		position: relative;
+	}
 }
 
 .top-nav--white {
