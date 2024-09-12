@@ -1,7 +1,11 @@
-mixin fullImage(i, title)
+mixin fullImage(i, title, v)
 	// start fullImage
 	+b.SECTION.fullImage.section#fullImage&attributes(attributes).bg-wrap
+		//- if v 
+		//- 	video(src="video/video1.mp4" autoplay loop muted playsinline).img-bg 
+		//- else
 		+img(`img/frame-${i}.jpg`, 'bg').img-bg 
+		
 		+b.section-title.text-center
 			h2= title
 			+e.link(href="#") подробнее 

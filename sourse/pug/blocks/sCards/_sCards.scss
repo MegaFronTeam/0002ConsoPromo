@@ -46,6 +46,12 @@
 .card {
 	text-align: center;
 	text-transform: uppercase;
+	&:hover {
+		--op: 0.2;
+		img {
+			transform: scale(1.03);
+		}
+	}
 
 	@include media-breakpoint-up(xl) {
 		padding-left: 40px;
@@ -65,6 +71,8 @@
 		max-width: 100%;
 		margin-right: auto;
 		position: relative;
+		overflow: hidden;
+
 		// max-width: 100%;
 		max-height: calc(
 			min(
@@ -79,15 +87,29 @@
 		);
 		// max-height: 100vh;
 		aspect-ratio: 400/605;
+
+		&:after {
+			background-color: #000;
+			content: "";
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: var(--op, 0.05);
+			position: absolute;
+			top: 0;
+			transition: opacity 0.3s linear;
+			width: 100%;
+		}
 		@include media-breakpoint-up(lg) {
 			margin-left: 40px;
 			margin-right: 40px;
 		}
 		img {
 			height: 100%;
+			@include mt;
 			// width: auto;
-
-			max-width: 100%;
+			object-fit: cover;
+			width: 100%;
 		}
 	}
 

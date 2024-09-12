@@ -24,11 +24,6 @@
 		height: auto;
 	}
 
-	video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
 	@include media-breakpoint-up(xl) {
 	}
 
@@ -85,3 +80,10 @@
 }
 
 // end.headerBlock
+
+video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+}
