@@ -349,6 +349,7 @@
 	background-image: none !important;
 	color: #fff;
 	will-change: transform;
+	background-color: #fff;
 	@include mt;
 	.icon {
 		// stroke: currentColor;
@@ -357,7 +358,7 @@
 		position: absolute;
 	}
 	&:hover {
-		transform: scale(1.1);
+		// transform: scale(1.1);
 	}
 }
 
@@ -785,5 +786,18 @@
 
 	.carousel-caption {
 		padding: 0 20px;
+	}
+}
+
+.swiper-slide {
+	.outer {
+		display: table;
+		width: 100%;
+		height: 100%;
+		.inner {
+			vertical-align: bottom !important;
+			display: table-cell;
+			box-sizing: border-box;
+		}
 	}
 }
