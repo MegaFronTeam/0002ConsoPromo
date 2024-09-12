@@ -69,31 +69,29 @@ function Showcase() {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
+			parallax: true,
 			on: {
-				progress: function () {
-					var swiper = this;
-					for (var i = 0; i < swiper.slides.length; i++) {
-						var slideProgress = swiper.slides[i].progress;
-						var innerOffset = swiper.height * interleaveOffset;
-						var innerTranslate = slideProgress * innerOffset;
-						swiper.slides[i].querySelector(".img-mask").style.transform =
-							"translate3d(" + innerTranslate + "px,0, 0)";
-					}
-				},
-				touchStart: function () {
-					var swiper = this;
-					for (var i = 0; i < swiper.slides.length; i++) {
-						swiper.slides[i].style.transition = "";
-					}
-				},
-				setTransition: function (speed) {
-					var swiper = this;
-					for (var i = 0; i < swiper.slides.length; i++) {
-						swiper.slides[i].style.transition = speed + "ms";
-						swiper.slides[i].querySelector(".img-mask").style.transition =
-							speed + "ms";
-					}
-				},
+				// progress: function (swiper, progress) {
+				// 	for (var i = 0; i < swiper.slides.length; i++) {
+				// 		var slideProgress = progress;
+				// 		var innerOffset = swiper.height * interleaveOffset;
+				// 		var innerTranslate = slideProgress * innerOffset;
+				// 		swiper.slides[i].querySelector(".img-mask").style.transform =
+				// 			"translate3d(" + innerTranslate + "px,0, 0)";
+				// 	}
+				// },
+				// touchStart: function (swiper) {
+				// 	for (var i = 0; i < swiper.slides.length; i++) {
+				// 		swiper.slides[i].style.transition = "";
+				// 	}
+				// },
+				// setTransition: function (swiper, speed) {
+				// 	for (var i = 0; i < swiper.slides.length; i++) {
+				// 		swiper.slides[i].style.transition = speed + "ms";
+				// 		swiper.slides[i].querySelector(".img-mask").style.transition =
+				// 			speed + "ms";
+				// 	}
+				// },
 				init: function () {
 					$(".swiper-slide-active")
 						.find("video")
