@@ -10,14 +10,14 @@ mixin headerBlock()
 								// Section Slide
 								.swiper-slide.swiper-slide-active(data-title='Sapfo Olive Oil' data-subtitle='Product Design' data-number='1')
 									.img-mask(data-swiper-parallax="300")
-										.section-image.picture-bg
-											+img("img/08hero.jpg",'bg').img-bg 
+										.section-image(data-src='img/09hero.jpg' style='background-image: url("img/09hero.jpg");') 
 									a.title.hide-ball(data-type='page-transition' href='http://clapat.ro/themes/bauman/project08.html') Sapfo Olive Oil
 								// /Section Slide
 								// Section Slide
 								.swiper-slide.swiper-slide-next(data-title='Forest House' data-subtitle='Architecture' data-number='2'  )
 									.img-mask(data-swiper-parallax="300")
-										.section-image(data-src='img/09hero.jpg' style='background-image: url("img/09hero.jpg");') 
+										.section-image.picture-bg
+											video(src="video/video1.mp4" loop muted playsinline).img-bg 
 									a.title.hide-ball(data-type='page-transition' href='http://clapat.ro/themes/bauman/project09.html') Forest House
 								// /Section Slide
 			

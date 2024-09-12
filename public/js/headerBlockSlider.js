@@ -31,8 +31,8 @@ function Showcase() {
 		var swiperOptions = {
 			grabCursor: true,
 			resistance: true,
-			resistanceRatio: 0.5,
 			slidesPerView: 1,
+			resistanceRatio: 0.5,
 			allowTouchMove: true,
 			speed: 900,
 			autoplay: false,
@@ -101,6 +101,12 @@ function Showcase() {
 						y: -20,
 						borderColor: "#999999",
 					});
+
+					$(".swiper-slide-active")
+						.find("video")
+						.each(function () {
+							$(this).get(0).play();
+						});
 				},
 
 				setTransition: function (swiper, speed) {
