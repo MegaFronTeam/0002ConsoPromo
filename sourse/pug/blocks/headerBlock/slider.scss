@@ -308,7 +308,7 @@
 		margin-left: 50px;
 	}
 	margin-left: 20px;
-	bottom: 40px;
+	bottom: calc(40px + 100vh - 100svh);
 	pointer-events: initial;
 	opacity: 1;
 }
@@ -734,7 +734,7 @@
 
 @media only screen and (max-width: 767px) {
 	.swiper-slide .outer {
-		padding: 80px 50px 220px 50px;
+		padding: 80px 50px calc(100px + 100vh - 100svh-) 50px;
 	}
 
 	#showcase-holder .showcase-captions {
