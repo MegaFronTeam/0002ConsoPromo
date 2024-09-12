@@ -304,7 +304,10 @@
 	position: absolute;
 	float: left;
 	// left: -30px;
-	margin-left: 50px;
+	@include media-breakpoint-up(md) {
+		margin-left: 50px;
+	}
+	margin-left: 20px;
 	bottom: 40px;
 	pointer-events: initial;
 	opacity: 1;

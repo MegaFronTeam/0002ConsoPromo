@@ -50,8 +50,9 @@
 		[fill="white"] {
 			fill: currentColor;
 		}
-		@include media-breakpoint-down(sm) {
-			svg {
+		svg {
+			height: 24px;
+			@include media-breakpoint-down(sm) {
 				height: 20px;
 			}
 		}

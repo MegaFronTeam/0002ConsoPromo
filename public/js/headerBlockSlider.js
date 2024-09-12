@@ -10,10 +10,9 @@ function slider() {
 		ease: Power2.easeOut,
 	});
 
-	Showcase();
-	ShowcaseCarousel();
-	FirstLoad();
 	AjaxLoad();
+	FirstLoad();
+	Showcase();
 }
 
 function Showcase() {
@@ -30,8 +29,6 @@ function Showcase() {
 		var interleaveOffset = 0.4;
 
 		var swiperOptions = {
-			direction: "horizontal",
-			loop: false,
 			grabCursor: true,
 			resistance: true,
 			resistanceRatio: 0.5,
@@ -40,6 +37,7 @@ function Showcase() {
 			speed: 900,
 			autoplay: false,
 			mousewheel: true,
+			loop: false,
 			pagination: {
 				el: ".showcase-captions",
 				clickable: true,
@@ -80,18 +78,38 @@ function Showcase() {
 				// 			"translate3d(" + innerTranslate + "px,0, 0)";
 				// 	}
 				// },
-				// touchStart: function (swiper) {
-				// 	for (var i = 0; i < swiper.slides.length; i++) {
-				// 		swiper.slides[i].style.transition = "";
-				// 	}
-				// },
-				// setTransition: function (swiper, speed) {
-				// 	for (var i = 0; i < swiper.slides.length; i++) {
-				// 		swiper.slides[i].style.transition = speed + "ms";
-				// 		swiper.slides[i].querySelector(".img-mask").style.transition =
-				// 			speed + "ms";
-				// 	}
-				// },
+				touchStart: function (swiper) {
+					for (var i = 0; i < swiper.slides.length; i++) {
+						swiper.slides[i].style.transition = "";
+					}
+
+					$("body").addClass("scale-up");
+					TweenMax.to("#ball", 0.2, {
+						transformOrigin: "20px 20px",
+						borderWidth: "1px",
+						borderColor: "#fff",
+						scale: 2,
+					});
+				},
+
+				touchEnd: function (swiper) {
+					$("body").removeClass("scale-up");
+					TweenMax.to("#ball", 0.3, {
+						borderWidth: "2px",
+						scale: 1,
+						x: -20,
+						y: -20,
+						borderColor: "#999999",
+					});
+				},
+
+				setTransition: function (swiper, speed) {
+					for (var i = 0; i < swiper.slides.length; i++) {
+						swiper.slides[i].style.transition = speed + "ms";
+						swiper.slides[i].querySelector(".img-mask").style.transition =
+							speed + "ms";
+					}
+				},
 				init: function () {
 					$(".swiper-slide-active")
 						.find("video")
@@ -359,25 +377,26 @@ function Showcase() {
 				return false;
 			});
 
-			$("#showcase-slider").on("mousedown touchstart", function () {
-				$("body").addClass("scale-up");
-				TweenMax.to("#ball", 0.2, {
-					transformOrigin: "20px 20px",
-					borderWidth: "1px",
-					borderColor: "#fff",
-					scale: 2,
-				});
-			});
-			$("#showcase-slider").on("mouseup touchend", function () {
-				$("body").removeClass("scale-up");
-				TweenMax.to("#ball", 0.3, {
-					borderWidth: "2px",
-					scale: 1,
-					x: -20,
-					y: -20,
-					borderColor: "#999999",
-				});
-			});
+			// $("#showcase-slider .swiper-wrapper").on("touchstart", function (e) {
+			// 	console.log(e);
+			// 	$("body").addClass("scale-up");
+			// 	TweenMax.to("#ball", 0.2, {
+			// 		transformOrigin: "20px 20px",
+			// 		borderWidth: "1px",
+			// 		borderColor: "#fff",
+			// 		scale: 2,
+			// 	});
+			// });
+			// $("#showcase-slider").on("mouseup touchend", function () {
+			// 	$("body").removeClass("scale-up");
+			// 	TweenMax.to("#ball", 0.3, {
+			// 		borderWidth: "2px",
+			// 		scale: 1,
+			// 		x: -20,
+			// 		y: -20,
+			// 		borderColor: "#999999",
+			// 	});
+			// });
 
 			$("body").on("mouseup touchend", function () {
 				$("body").removeClass("scale-up");
@@ -389,123 +408,6 @@ function Showcase() {
 			1,
 			{force3D: true, opacity: 1, delay: 0.4, ease: Power2.easeOut}
 		);
-	}
-} //End Showcase
-
-function ShowcaseCarousel() {
-	if ($("#showcase-carousel-slider").length > 0) {
-		$("footer").addClass("showcase-footer");
-
-		$("#showcase-carousel-slider .img-mask").wrap(
-			"<div class='img-mask-wrap'></div>"
-		);
-
-		var swiperOptions = {
-			direction: "horizontal",
-			loop: false,
-			grabCursor: true,
-			resistance: true,
-			resistanceRatio: 0.5,
-			slidesPerView: 4,
-			breakpoints: {
-				1466: {
-					slidesPerView: 2,
-					spaceBetween: 40,
-				},
-				1024: {
-					slidesPerView: 2,
-					spaceBetween: 30,
-				},
-				767: {
-					slidesPerView: 1,
-					spaceBetween: 30,
-				},
-				479: {
-					slidesPerView: 1,
-					spaceBetween: 20,
-				},
-			},
-			allowTouchMove: true,
-			speed: 500,
-			autoplay: false,
-			effect: "slide",
-			mousewheel: true,
-			scrollbar: {
-				el: ".swiper-scrollbar",
-				draggable: true,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		};
-
-		var swiper = new Swiper(".swiper-container", swiperOptions);
-
-		$(".swiper-slide").mouseenter(function (e) {
-			TweenMax.to("#ball", 0.2, {
-				transformOrigin: "20px 20px",
-				borderWidth: "1px",
-				scale: 2,
-				borderColor: "#fff",
-			});
-			TweenMax.to("#ball-loader", 0.2, {borderWidth: "1px", top: 1, left: 1});
-			$("#ball").addClass("with-icon").append('<i class="fa fa-plus"></i>');
-			$(this)
-				.find("video")
-				.each(function () {
-					$(this).get(0).play();
-				});
-		});
-
-		$(".swiper-slide").mouseleave(function (e) {
-			TweenMax.to("#ball", 0.2, {
-				borderWidth: "2px",
-				scale: 1,
-				x: -20,
-				y: -20,
-				borderColor: "#999999",
-			});
-			TweenMax.to("#ball-loader", 0.2, {borderWidth: "2px", top: 0, left: 0});
-			$("#ball").removeClass("with-icon");
-			$("#ball i").remove();
-			$("body").removeClass("scale-up");
-			$(this)
-				.find("video")
-				.each(function () {
-					$(this).get(0).pause();
-				});
-		});
-
-		$(".swiper-slide").on("mousedown", function (event) {
-			return false;
-		});
-
-		$("#showcase-carousel-slider").on("mousedown touchstart", function () {
-			$("body").addClass("scale-up");
-			TweenMax.to("#ball", 0.2, {
-				transformOrigin: "20px 20px",
-				borderWidth: "1px",
-				borderColor: "#fff",
-				scale: 2,
-			});
-		});
-		$("#showcase-carousel-slider").on("mouseup touchend", function () {
-			$("body").removeClass("scale-up");
-			TweenMax.to("#ball", 0.3, {
-				borderWidth: "2px",
-				scale: 1,
-				x: -20,
-				y: -20,
-				borderColor: "#999999",
-			});
-		});
-
-		$("body").on("mouseup touchend", function () {
-			$("body").removeClass("scale-up");
-		});
-
-		FitSlideScreen();
 	}
 } //End Showcase
 

@@ -42,19 +42,27 @@
 	border-color: #999999;
 }
 
-#ball:before {
-	font-family: FontAwesome;
-	content: "\f053";
-	font-size: 6px;
-	width: 4px;
-	height: 8px;
-	line-height: 8px;
-	text-align: center;
-	position: absolute;
-	left: -17px;
-	top: 15px;
-	color: #fff;
-	opacity: 0;
+#ball {
+	.icon {
+		font-size: 6px;
+	}
+	.arrow {
+		width: 8px;
+		height: 8px;
+		line-height: 8px;
+		text-align: center;
+		position: absolute;
+		top: 15px;
+		color: #fff;
+		opacity: 0;
+	}
+}
+#ball .left {
+	// font-size: 6px;
+	.icon {
+		transform: rotateY(-180deg);
+	}
+	left: -27px;
 	transform: translateX(-20px);
 	-webkit-transform: translateX(-20px);
 	transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
@@ -64,56 +72,46 @@
 	color: #fff;
 }
 
-#ball::after {
-	font-family: FontAwesome;
-	content: "\f054";
-	font-size: 6px;
-	width: 4px;
-	height: 8px;
-	line-height: 8px;
-	text-align: center;
-	position: absolute;
+#ball .right {
+	.icon {
+		// transform: rotate(-90deg);
+	}
 	left: 50px;
-	top: 15px;
-	color: #fff;
-	opacity: 0;
 	transform: translateX(20px);
 	-webkit-transform: translateX(20px);
 	transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
-.light-content #ball:before,
-.light-content #ball:after {
+.light-content #ball .arrow {
 	color: #fff;
 }
 
-.scale-up #ball:before {
+.scale-up #ball .left {
 	opacity: 1;
 	transform: translateX(0px);
 	-webkit-transform: translateX(0px);
 	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
 }
 
-.scale-up #ball:after {
+.scale-up #ball .right {
 	opacity: 1;
 	transform: translateX(0px);
 	-webkit-transform: translateX(0px);
 	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
 }
 
-.scale-up.scale-none #ball:before,
-.scale-up.scale-none #ball:after {
+.scale-up.scale-none #ball .arrow {
 	opacity: 0;
 }
 
-.scale-up-carousel #ball:before {
+.scale-up-carousel #ball .left {
 	width: 8px;
 	opacity: 1;
 	transform: translateY(0px);
 	-webkit-transform: translateY(0px);
 }
 
-.scale-up-carousel #ball:after {
+.scale-up-carousel #ball .right {
 	width: 8px;
 	opacity: 1;
 	transform: translateY(0px);
