@@ -16,9 +16,24 @@
 		z-index: -1;
 	}
 
+	video {
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+
 	.section-title {
 		margin-bottom: 0;
+		h2 {
+			font-size: 12px;
+			margin-bottom: 0;
+		}
 		&__link {
+			font-size: 10px;
 			text-transform: uppercase;
 			color: #fff !important;
 			text-transform: none;
