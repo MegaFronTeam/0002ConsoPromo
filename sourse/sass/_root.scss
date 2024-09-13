@@ -29,7 +29,7 @@
 	// @include media-breakpoint-up(md) {
 	--sPT: calc(#{rem(90)});
 	@include media-breakpoint-up(md) {
-		--sPT: calc(#{rem(120)});
+		// --sPT: calc(#{rem(120)});
 	}
 	--sPB: calc(65px);
 	--sTPB: #{rem(40)};
