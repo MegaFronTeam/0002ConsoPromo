@@ -470,3 +470,28 @@ iframe {
 // 	height: 0;
 // 	overflow: hidden;
 // }
+
+.cookie-block {
+	background-color: rgba($color: #fff, $alpha: 0.69);
+	font-size: 12px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	z-index: 100;
+	.row {
+		--bs-gutter-y: 1rem;
+	}
+
+	&__btns {
+		display: flex;
+		gap: 10px;
+		align-items: flex-start;
+	}
+}
+
+.container-fluid {
+	--bs-gutter-x: 3.5rem;
+}

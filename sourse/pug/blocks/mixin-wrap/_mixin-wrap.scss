@@ -71,36 +71,45 @@
 
 .search-block {
 	position: absolute;
-	top: 100%;
+	top: 0;
 	@include media-breakpoint-up(xl) {
-		right: 30px;
+		right: -5px;
 		left: auto;
 	}
 	// right: 30px;
-	left: 0;
-	width: 500px;
-	max-width: 100%;
-	&:before {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		// background-color: #fff;
-		width: 100%;
-		bottom: 0;
-		height: calc(100% + 20px);
-	}
+	left: 5px;
+	width: 200px;
+	// max-width: 100%;
+	// &:before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	z-index: -1;
+	// 	// background-color: #fff;
+	// 	width: 100%;
+	// 	bottom: 0;
+	// 	height: calc(100% + 20px);
+	// }
 	input {
 		z-index: 23;
 		font-size: 14px;
 		width: 100%;
 		border: none !important;
 		outline: none !important;
-		padding-left: rem(30);
-		padding-top: rem(14);
-		padding-bottom: rem(14);
+		padding-left: 0;
+		padding-top: rem(4);
+		padding-bottom: rem(4);
+		background: none !important;
+		border: none !important;
+
+		color: currentColor;
+		&::placeholder {
+			color: currentColor;
+		}
+
+		border-bottom: 1px solid currentColor !important;
 	}
 	.icon {
-		font-size: rem(20);
+		font-size: rem(24);
 		fill: none;
 		stroke: currentColor;
 		border: none !important;
@@ -115,6 +124,7 @@
 		align-items: center;
 		background: none !important;
 		border: none !important;
+		color: currentColor;
 	}
 }
 

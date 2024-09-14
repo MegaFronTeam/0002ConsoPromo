@@ -214,6 +214,24 @@ function eventHandler() {
 	});
 
 	slider();
+
+	document.addEventListener("click", function (e) {
+		const target = e.target.closest(".icon-btn--search");
+		if (target) {
+			$(".icon-btn--search").addClass("opacity-0");
+			$(".search-block").fadeIn().addClass("shown");
+		} else if (
+			!e.target.closest(".search-block") &&
+			!e.target.closest(".icon-btn--search") &&
+			$(".search-block").hasClass("shown")
+		) {
+			$(".icon-btn--search").removeClass("opacity-0");
+			$(".search-block").fadeOut().removeClass("shown");
+		}
+	});
+	$(document).on("click", ".btn-close", function () {
+		$(".cookie-block--js").fadeOut();
+	});
 }
 
 if (document.readyState !== "loading") {

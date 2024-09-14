@@ -52,6 +52,7 @@
 			fill: currentColor;
 		}
 		svg {
+			width: auto;
 			height: 24px;
 			@include media-breakpoint-down(sm) {
 				height: 20px;
@@ -77,6 +78,7 @@
 	}
 
 	&__search-col {
+		position: relative;
 		// position: relative;
 
 		.search-block {
@@ -84,7 +86,7 @@
 		}
 		&:hover {
 			.search-block {
-				display: block;
+				// display: block;
 			}
 		}
 	}
@@ -101,6 +103,7 @@
 .icon-btn {
 	display: inline-block;
 	position: relative;
+	cursor: pointer;
 	@include mt;
 	svg {
 		fill: none;
@@ -131,4 +134,8 @@
 .icon-btns {
 	display: flex;
 	gap: 1rem;
+}
+
+.opacity-0 {
+	opacity: 0;
 }
