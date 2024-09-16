@@ -11,18 +11,18 @@
 	}
 	.menu {
 		& > li {
-			transform: translateY(var(--translateYLi, -140px));
-			opacity: var(--opacityLi, 0);
+			// transform: translateY(var(--translateYLi, -140px));
+			// opacity: var(--opacityLi, 0);
 			& > a {
 				text-transform: uppercase;
 			}
 
 			position: relative;
-			@for $i from 1 through 7 {
-				&:nth-child(#{$i}) {
-					transition-delay: calc(1s - 1s * (#{$i} / 7));
-				}
-			}
+			// @for $i from 1 through 7 {
+			// 	&:nth-child(#{$i}) {
+			// 		transition-delay: calc(1s - 1s * (#{$i} / 7));
+			// 	}
+			// }
 		}
 		ul {
 			margin-left: 1rem;
@@ -103,7 +103,10 @@
 }
 .menu-mobile {
 	// @include mt(0.6s);
-	transition: opacity 0.6s;
+	transition:
+		transform 0.6s,
+		opacity 0.3s;
+	// transition: екф 0.6s;
 	padding-top: 1.2rem;
 	padding-bottom: calc(2rem + 0.5vh);
 	will-change: transform;
