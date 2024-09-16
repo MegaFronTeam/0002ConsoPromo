@@ -11,8 +11,10 @@ mixin headerBlock()
 								.swiper-slide.swiper-slide-active(data-title='Sapfo Olive Oil' data-subtitle='Product Design' data-number='1')
 									.img-mask(data-swiper-parallax="300")
 										.section-image.picture-bg
-											video(src="video/video1.mp4" loop muted playsinline).img-bg 
+											video(src="video/video1.mp4" loop muted playsinline).img-bg#video1 
+											
 									a.title.hide-ball(data-type='page-transition' href='http://clapat.ro/themes/bauman/project08.html') Sapfo Olive Oil
+									+playBtn('video1')
 								// /Section Slide
 								// Section Slide
 								.swiper-slide.swiper-slide-next(data-title='Forest House' data-subtitle='Architecture' data-number='2'  )
@@ -37,18 +39,19 @@ mixin headerBlock()
 			.showcase-captions-wrap
 				.showcase-counter(data-total='4' )
 				.showcase-captions.swiper-pagination-clickable.swiper-pagination-bullets
-					.outer.swiper-pagination-bullet
-						.inner
-							.subtitle( ) Web Design
-							.title() Deals Application
-							.counter-wrap
-								.counter() 1
-					.outer.swiper-pagination-bullet
-						.inner
-							.subtitle() Branding
-							.title() Opulence Cosmetics
-							.counter-wrap
-								.counter() 2
+					//- .outer.swiper-pagination-bullet
+					//- 	.inner
+					//- 		.subtitle( ) Web Design
+					//- 		.title() Deals Application
+					//- 		.counter-wrap
+					//- 			.counter() 1
+					//- 	+playBtn('video1')
+					//- .outer.swiper-pagination-bullet
+					//- 	.inner
+					//- 		.subtitle() Branding
+					//- 		.title() Opulence Cosmetics
+					//- 		.counter-wrap
+					//- 			.counter() 2
 			.arrows-wrap
 				.prev-wrap.parallax-wrap
 					.swiper-button-prev.swiper-button-white.parallax-element

@@ -155,7 +155,7 @@
 
 	.dd-group + .dd-group {
 		@include media-breakpoint-up(sm) {
-			margin-top: rem(20);
+			margin-top: rem(-2);
 			margin-bottom: rem(20);
 		}
 		// margin-top: rem(10);

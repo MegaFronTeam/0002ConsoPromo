@@ -24,7 +24,7 @@ mixin top-nav()
 			include logo.svg
 		.container-fluid
 			+e.row.row 
-				.col-md-auto.col
+				.col-auto
 					+menu-toggle()
 				.col.d-none.d-xl-block
 					nav
@@ -32,7 +32,7 @@ mixin top-nav()
 							li: a(href="#") Подарочная карта
 							li: a(href="#") look-book
 							li: a(href="#") Магазины
-				+e.search-col.col-xl-auto.col.hide-ball.d-none.d-md-flex 
+				+e.search-col.col-xl-auto.col.hide-ball
 					+b.icon-btn--search
 						+icon("search")
 					+search()

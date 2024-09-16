@@ -2,7 +2,8 @@ mixin fullImage(i, title, v)
 	// start fullImage
 	+b.SECTION.fullImage.section#fullImage&attributes(attributes).bg-wrap
 		if v 
-			video(src="video/video2.mp4" autoplay loop muted playsinline).img-bg 
+			video(src="video/video2.mp4" autoplay loop muted playsinline).img-bg.video-bg#video2 
+			+playBtn('video2')
 		else
 			+img(`img/frame-${i}.jpg`, 'bg').img-bg 
 		

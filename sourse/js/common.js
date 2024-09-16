@@ -232,6 +232,23 @@ function eventHandler() {
 	$(document).on("click", ".btn-close", function () {
 		$(".cookie-block--js").fadeOut();
 	});
+
+	$(".video-play-toggle").on("click", function () {
+		const video = this.getAttribute("data-video");
+		console.log("video", video);
+
+		if ($(this).hasClass("paused")) {
+			$("#" + video)
+				.get(0)
+				.play();
+			$(this).removeClass("paused");
+		} else {
+			$("#" + video)
+				.get(0)
+				.pause();
+			$(this).addClass("paused");
+		}
+	});
 }
 
 if (document.readyState !== "loading") {
