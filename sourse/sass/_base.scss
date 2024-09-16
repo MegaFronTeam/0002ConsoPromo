@@ -523,9 +523,19 @@ iframe {
 	&:hover {
 		background-color: var(--color-background-overlay);
 	}
-	svg {
-		&:nth-child(2) {
-			display: none;
+	&:not(.paused) {
+		svg {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+
+	&.paused {
+		svg {
+			&:first-child {
+				display: none;
+			}
 		}
 	}
 }
