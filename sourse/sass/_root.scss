@@ -27,12 +27,14 @@
 	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 
 	// @include media-breakpoint-up(md) {
+
 	--sPT: calc(#{rem(90)});
 	@include media-breakpoint-up(md) {
 		// --sPT: calc(#{rem(120)});
 	}
 	--sPB: calc(65px);
 	--sTPB: #{rem(40)};
+
 	// }
 }
 .fancybox__container {

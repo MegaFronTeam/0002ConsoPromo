@@ -2,7 +2,7 @@
 	.menu {
 		& > li {
 			&:first-child {
-				margin-bottom: 2rem;
+				margin-bottom: 1rem;
 				& > a {
 					text-transform: none;
 				}
@@ -25,7 +25,7 @@
 			// }
 		}
 		ul {
-			margin-left: 1rem;
+			margin-left: rem(20);
 		}
 	}
 	& {
@@ -43,12 +43,12 @@
 
 .toggle-menu-mobile {
 	& {
-		--h: 2px;
+		--h: 1px;
 		--color: var(--base-color);
-		--position: calc(var(--h) * 2.4);
+		--position: calc(var(--h) * 4.4);
 
 		display: block;
-		height: calc(var(--h) * 12);
+		height: 1em;
 		position: relative;
 		font-size: rem(24);
 		width: 1em;
@@ -103,11 +103,12 @@
 }
 .menu-mobile {
 	// @include mt(0.6s);
+	font-size: 12px;
 	transition:
 		transform 0.6s,
 		opacity 0.3s;
 	// transition: екф 0.6s;
-	padding-top: 1.2rem;
+	padding-top: calc(1.2rem + var(--line-h));
 	padding-bottom: calc(2rem + 0.5vh);
 	will-change: transform;
 	display: flex;
@@ -169,7 +170,7 @@
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		flex-grow: 1;
-		padding-block: rem(32);
+		padding-block: rem(16);
 		margin-top: 1rem;
 		// height: 100vh;
 		// @include mt(.3s);
@@ -178,13 +179,14 @@
 	}
 
 	&__container {
-		margin-left: auto;
-		margin-right: auto;
+		// margin-left: auto;
+		// margin-right: auto;
 		padding-inline: 1rem;
 
 		width: 100%;
 		@include media-breakpoint-up(sm) {
-			max-width: rem(280);
+			padding-inline: 56px;
+			// max-width: rem(280);
 		}
 	}
 
@@ -214,7 +216,7 @@
 				content: url("../img/chevron-down.svg");
 				position: absolute;
 				right: 0;
-				top: rem(0);
+				top: rem(3);
 				@include mt;
 				// top: 50%;
 			}
@@ -223,7 +225,7 @@
 			}
 			&.menu__item--open {
 				&::after {
-					transform: translateY(rem(6)) rotateX(-180deg);
+					transform: translateY(rem(2)) rotateX(-180deg);
 				}
 				& > ul {
 					display: block;
@@ -241,8 +243,11 @@
 		justify-content: flex-start;
 		border: none;
 		padding: 0;
+		margin-top: 0.5em;
 	}
-
+	.small {
+		font-size: 12px;
+	}
 	&__footer {
 		padding-top: 1rem;
 		transition:

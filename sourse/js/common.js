@@ -220,6 +220,7 @@ function eventHandler() {
 		if (target) {
 			$(".icon-btn--search").addClass("opacity-0");
 			$(".search-block").fadeIn().addClass("shown");
+			$(".search-block input").focus();
 		} else if (
 			!e.target.closest(".search-block") &&
 			!e.target.closest(".icon-btn--search") &&
