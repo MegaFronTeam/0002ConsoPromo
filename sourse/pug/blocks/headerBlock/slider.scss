@@ -130,7 +130,7 @@
 }
 
 #showcase-holder .showcase-captions {
-	padding: 80px 3.5rem 240px;
+	padding: 80px 0 240px;
 	max-width: none;
 	width: 100%;
 	box-sizing: border-box;
@@ -144,7 +144,7 @@
 
 #showcase-holder .swiper-pagination-bullet {
 	position: absolute;
-	padding: 80px 80px 240px 80px;
+	padding: 80px calc(var(--container-gutter-x)) 240px;
 	width: 100%;
 	height: 100%;
 	display: table;
@@ -170,7 +170,8 @@
 }
 
 .swiper-slide .outer {
-	padding: 80px 3.5rem 240px 3.5rem;
+	padding: 80px var(var(--container-gutter-x)) 240px
+		var(var(--container-gutter-x));
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -187,11 +188,12 @@
 	opacity: 1;
 	display: table;
 	width: auto;
-	font-size: 48px;
-	line-height: 70px;
-	font-weight: 500;
-	margin-top: 30px;
-	color: #000;
+	font-size: 44px;
+	// line-height: 70px;
+	font-weight: 400;
+	// margin-top: 30px;
+	// color: #000;
+	font-family: "Tenor Sans", sans-serif;
 	cursor: pointer;
 }
 
@@ -225,9 +227,10 @@
 }
 
 .subtitle {
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 20px;
+	// font-size: 16px;
+	// font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
 	margin-bottom: 0px;
 	width: 100%;
 	z-index: 10;
@@ -298,16 +301,16 @@
 }
 
 .arrows-wrap {
-	width: 160px;
-	height: 80px;
+	width: 120px;
+	height: 60px;
 	// position: relative;
 	position: absolute;
 	float: left;
 	// left: -30px;
 	@include media-breakpoint-up(md) {
-		margin-left: 25px;
 	}
-	margin-left: 20px;
+	margin-left: calc(var(--container-gutter-x));
+	// margin-left: 20px;
 	bottom: calc(40px + 100vh - 100svh);
 	pointer-events: initial;
 	opacity: 1;
@@ -315,8 +318,8 @@
 
 .prev-wrap,
 .next-wrap {
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	float: left;
 	display: flex;
 	position: relative;
@@ -339,8 +342,8 @@
 .arrows-wrap .swiper-button-prev {
 	position: relative;
 	top: auto;
-	width: 40px;
-	height: 40px;
+	width: 32px;
+	height: 32px;
 	margin-top: 0;
 	z-index: 10;
 	cursor: pointer;
@@ -357,7 +360,7 @@
 	.icon {
 		// stroke: currentColor;
 		// fill: none !important;
-		font-size: 20px;
+		font-size: 14px;
 		position: absolute;
 	}
 	&:hover {
@@ -686,15 +689,15 @@
 
 @media only screen and (max-width: 1466px) {
 	.swiper-slide .outer {
-		padding: 80px 3.5rem 220px;
+		padding: 80px var(--container-gutter-x) 220px;
 	}
 
 	#showcase-holder .showcase-captions {
-		padding: 80px 2.5rem 220px;
+		padding: 80px 0 220px;
 	}
 
 	#showcase-holder .swiper-pagination-bullet {
-		padding: 80px 1.5rem 220px;
+		padding: 80px calc(var(--container-gutter-x)) 220px;
 	}
 
 	.showcase-counter::before {
@@ -734,7 +737,8 @@
 
 @media only screen and (max-width: 767px) {
 	.swiper-slide .outer {
-		padding: 80px 50px calc(100px + 100vh - 100svh) 50px;
+		padding: 80px calc(var(--container-gutter-x) / 2)
+			calc(100px + 100vh - 100svh);
 	}
 
 	#showcase-holder .showcase-captions {
@@ -743,12 +747,6 @@
 
 	#showcase-holder .swiper-pagination-bullet {
 		padding: 80px 30px 220px 30px;
-	}
-
-	.title {
-		font-size: 36px;
-		line-height: 50px;
-		margin-top: 20px;
 	}
 
 	.showcase-counter::before {
@@ -769,22 +767,12 @@
 }
 
 @media only screen and (max-width: 479px) {
-	.swiper-slide .outer {
-		padding: 80px 40px 220px 40px;
-	}
-
 	#showcase-holder .showcase-captions {
 		padding: 80px 20px 220px 20px;
 	}
 
 	#showcase-holder .swiper-pagination-bullet {
 		padding: 80px 20px 220px 20px;
-	}
-
-	.title {
-		font-size: 32px;
-		line-height: 40px;
-		margin-top: 20px;
 	}
 
 	.carousel-caption {

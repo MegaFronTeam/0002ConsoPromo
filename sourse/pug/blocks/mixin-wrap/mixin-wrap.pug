@@ -27,10 +27,30 @@ mixin addblock()
 
 mixin search()
 	+b.search-block.hide-ball
-		form
-			input(type="text" placeholder="Поиск  " inputmode='search')
-			button 
-				+icon("search")
+		+e.header
+			form
+				input(type="text" placeholder="Поиск  " inputmode='search')
+				button(type="button")
+					+icon("close")
+		+e.body.d-md-none
+			.row
+				mixin card(i,t)
+					// start card 
+					.col-6
+						+b.card
+							+e.wrap
+								+e.img(href="#")
+									+b.img(src=`img/card-${i}.jpg`, alt=`card${i}`)
+								+e.body
+									+e.title(href="#")
+										= t
+									+e.text Смотреть
+				- for (var x = 0; x < 3; x++)
+					+card(3,'только для тебя')
+					+card(4,'аксессуары')
+		+e.footer.d-md-none
+			a.btn.btn-primary.w-100(href="#") Все результаты поиска 
+		
 
 mixin page-head(t,...items)
 	+b.page-head

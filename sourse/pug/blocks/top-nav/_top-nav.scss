@@ -46,29 +46,12 @@
 			font-size: 12px;
 			font-weight: 500;
 			letter-spacing: -0.02em;
-		}
-
-		list-style: none;
-	}
-	.container-fluid {
-		--bs-gutter-x: #{rem(56)};
-	}
-	.logo {
-		@include a-cent1();
-		display: flex;
-		color: var(--base-color);
-		[fill="white"] {
-			fill: currentColor;
-		}
-		svg {
-			width: auto;
-			height: 24px;
-			@include media-breakpoint-down(sm) {
-				height: 20px;
+			&:hover {
+				opacity: 0.5;
 			}
 		}
 
-		text-align: center;
+		list-style: none;
 	}
 
 	@include media-breakpoint-up(sm) {
@@ -83,16 +66,15 @@
 	@include media-breakpoint-only(xs) {
 	}
 
-	@include media-breakpoint-down(xs) {
-	}
-
 	&__search-col {
-		position: relative;
+		@include media-breakpoint-up(xl) {
+			position: relative;
+		}
 		// position: relative;
 
-		.search-block {
-			display: none;
-		}
+		// .search-block {
+		// 	display: none;
+		// }
 		&:hover {
 			.search-block {
 				// display: block;
@@ -107,6 +89,14 @@
 .top-nav--white {
 	--base-color: #fff;
 	--base-color-inverse: #{$body-color};
+}
+
+@include media-breakpoint-down(md) {
+	.top-nav--search-open {
+		background-color: #fff;
+		--base-color: #{$body-color};
+		--base-color-inverse: #fff;
+	}
 }
 
 .icon-btn {
@@ -148,4 +138,22 @@
 
 .opacity-0 {
 	opacity: 0;
+}
+
+.logo {
+	@include a-cent1();
+	display: flex;
+	color: var(--base-color);
+	[fill="white"] {
+		fill: currentColor;
+	}
+	svg {
+		width: auto;
+		height: 24px;
+		@include media-breakpoint-down(sm) {
+			height: 20px;
+		}
+	}
+
+	text-align: center;
 }

@@ -27,6 +27,13 @@
 			grid-template-columns: 0.75fr 0.25fr;
 		}
 	}
+	li {
+		a {
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
 	&__item {
 		padding: rem(36) 0;
 		@include media-breakpoint-down(lg) {
@@ -89,7 +96,7 @@
 	}
 
 	.copyright {
-		color: #b9aea8;
+		color: #b1b1b1;
 		font-size: rem(14);
 
 		@include media-breakpoint-up(sm) {

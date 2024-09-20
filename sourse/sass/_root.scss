@@ -35,6 +35,10 @@
 	--sPB: calc(65px);
 	--sTPB: #{rem(40)};
 
+	@include media-breakpoint-up(md) {
+		--container-gutter-x: 56px;
+	}
+	--container-gutter-x: 1rem;
 	// }
 }
 .fancybox__container {

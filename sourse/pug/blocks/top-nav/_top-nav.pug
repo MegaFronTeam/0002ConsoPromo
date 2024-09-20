@@ -5,6 +5,9 @@ mixin mob-mnu()
 	+b.menu-mobile--js
 		+e.container
 			+menu-toggle()
+			.d-sm-none
+				+b.logo(href="/")
+					include logo.svg
 		+e.inner
 			+e.container
 				+mnu()

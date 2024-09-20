@@ -215,19 +215,34 @@ function eventHandler() {
 
 	slider();
 
+	$(".search-block ").on("input", "input", function () {
+		if ($(this).val().length > 0) {
+			$(this).next().addClass("active");
+		} else {
+			$(this).next().removeClass("active");
+		}
+	});
+
+	$(".search-block button").on("click", function () {
+		$(this).prev().val("");
+		$(this).removeClass("active");
+	});
+
 	document.addEventListener("click", function (e) {
 		const target = e.target.closest(".icon-btn--search");
 		if (target) {
 			$(".icon-btn--search").addClass("opacity-0");
-			$(".search-block").fadeIn().addClass("shown");
-			$(".search-block input").focus();
+			$(".search-block").addClass("shown");
+			// $(".search-block input").focus();
+			$(".top-nav").addClass("top-nav--search-open");
 		} else if (
 			!e.target.closest(".search-block") &&
 			!e.target.closest(".icon-btn--search") &&
 			$(".search-block").hasClass("shown")
 		) {
 			$(".icon-btn--search").removeClass("opacity-0");
-			$(".search-block").fadeOut().removeClass("shown");
+			$(".search-block").removeClass("shown");
+			$(".top-nav").removeClass("top-nav--search-open");
 		}
 	});
 	$(document).on("click", ".btn-close", function () {

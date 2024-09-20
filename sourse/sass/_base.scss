@@ -480,10 +480,10 @@ iframe {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	width: 100%;
-
 	z-index: 100;
 	.row {
 		--bs-gutter-y: 1rem;
+		align-items: center;
 	}
 
 	&__btns {
@@ -494,10 +494,7 @@ iframe {
 }
 
 .container-fluid {
-	@include media-breakpoint-up(sm) {
-		--bs-gutter-x: 56px;
-	}
-	--bs-gutter-x: 1rem;
+	--bs-gutter-x: calc(var(--container-gutter-x) * 2);
 }
 
 .video-play-toggle {
@@ -556,7 +553,10 @@ iframe {
 }
 
 .line-top {
-	font-size: 14px;
+	@include media-breakpoint-up(sm) {
+		font-size: 14px;
+	}
+	font-size: 10px;
 	padding: 6px;
 	height: 36px;
 	display: flex;
