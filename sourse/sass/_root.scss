@@ -28,11 +28,11 @@
 
 	// @include media-breakpoint-up(md) {
 
-	--sPT: calc(#{rem(90)});
+	--sPT: calc(#{rem(90)} + var(--line-h) + env(safe-area-inset-top));
 	@include media-breakpoint-up(md) {
 		// --sPT: calc(#{rem(120)});
 	}
-	--sPB: calc(65px);
+	--sPB: calc(65px + env(safe-area-inset-top));
 	--sTPB: #{rem(40)};
 
 	@include media-breakpoint-up(md) {

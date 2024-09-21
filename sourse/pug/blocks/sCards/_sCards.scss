@@ -1,6 +1,6 @@
 // start .sCards
 .sCards {
-	--sPT: #{rem(60)};
+	--sPT: calc(#{rem(65)});
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
 	background-color: #fff;
@@ -41,8 +41,11 @@
 	}
 	@include media-breakpoint-up(md) {
 	}
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-down(sm) {
+		padding-top: var(--line-h, 0);
+		padding-bottom: 0;
 	}
+
 	@include media-breakpoint-between(md, xl) {
 	}
 	@include media-breakpoint-only(xl) {
@@ -81,7 +84,7 @@
 		aspect-ratio: 400/605;
 
 		max-width: 100%;
-		max-height: calc(min(100vh, 100dvh) - var(--sPT) * 2 - 6rem);
+		max-height: calc(min(100vh, 100dvh) - var(--sPT) - 6rem);
 		height: 100%;
 	}
 	&__img {

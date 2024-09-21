@@ -768,11 +768,11 @@
 
 @media only screen and (max-width: 479px) {
 	#showcase-holder .showcase-captions {
-		padding: 80px 20px 220px 20px;
+		padding: 80px 20px calc(220px);
 	}
 
 	#showcase-holder .swiper-pagination-bullet {
-		padding: 80px 20px 220px 20px;
+		padding: 80px 20px calc(220px);
 	}
 
 	.carousel-caption {
