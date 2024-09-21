@@ -1,6 +1,6 @@
 .footer {
 	background: #f7f7f7;
-	color: $gray-600;
+	color: #808080;
 	height: 100%;
 	overflow-y: auto;
 	@include media-breakpoint-up(sm) {
@@ -260,19 +260,24 @@
 
 	//
 	@include media-breakpoint-down(sm) {
+		font-size: 14px;
+		.footer__nav {
+			border: none;
+		}
 		.news-letters {
 			order: -1;
-			border-bottom: 1px solid #dcd7d3;
+			// border-bottom: 1px solid #dcd7d3;
 			padding-bottom: 1.5rem;
 			// margin-bottom: 0.5rem;
 		}
 		.copyright {
-			text-align: center;
+			// text-align: center;
 		}
 		.icons-group {
-			border-bottom: 1px solid #dcd7d3;
-			padding-bottom: 1.5rem;
-			margin-bottom: 1rem;
+			// border-bottom: 1px solid #dcd7d3;
+			// padding-bottom: 1.5rem;
+			margin-top: 1rem;
+			justify-content: flex-start;
 			border-top: none;
 			margin-top: 0;
 			padding-top: 0;
@@ -295,7 +300,7 @@
 	display: flex;
 	width: 100%;
 	.icon {
-		fill: $gray-600;
+		fill: #808080;
 	}
 	@include media-breakpoint-down(lg) {
 		padding-top: rem(30);
@@ -384,7 +389,7 @@
 		// padding-top: 2rem;
 	}
 	@include media-breakpoint-down(sm) {
-		align-items: center;
+		// align-items: center;
 	}
 
 	&__title {

@@ -230,16 +230,13 @@ function eventHandler() {
 
 	document.addEventListener("click", function (e) {
 		const target = e.target.closest(".icon-btn--search");
-		if (target) {
+		const searchBlock = document.querySelector(".search-block");
+		if (target && !searchBlock.classList.contains("shown")) {
 			$(".icon-btn--search").addClass("opacity-0");
-			$(".search-block").addClass("shown");
+			searchBlock.classList.add("shown");
 			// $(".search-block input").focus();
 			$(".top-nav").addClass("top-nav--search-open");
-		} else if (
-			!e.target.closest(".search-block") &&
-			!e.target.closest(".icon-btn--search") &&
-			$(".search-block").hasClass("shown")
-		) {
+		} else {
 			$(".icon-btn--search").removeClass("opacity-0");
 			$(".search-block").removeClass("shown");
 			$(".top-nav").removeClass("top-nav--search-open");

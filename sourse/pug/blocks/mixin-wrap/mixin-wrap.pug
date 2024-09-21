@@ -34,7 +34,7 @@ mixin search()
 					+icon("close")
 		+e.body.d-md-none
 			.row
-				mixin card(i,t)
+				mixin cardS(i,t)
 					// start card 
 					.col-6
 						+b.card
@@ -46,8 +46,8 @@ mixin search()
 										= t
 									+e.text Смотреть
 				- for (var x = 0; x < 3; x++)
-					+card(3,'только для тебя')
-					+card(4,'аксессуары')
+					+cardS(3,'только для тебя')
+					+cardS(4,'аксессуары')
 		+e.footer.d-md-none
 			a.btn.btn-primary.w-100(href="#") Все результаты поиска 
 		

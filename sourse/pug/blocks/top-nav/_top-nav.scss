@@ -54,7 +54,10 @@
 		list-style: none;
 	}
 
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-down(lg) {
+		.icon-btn--search {
+			opacity: 1 !important;
+		}
 	}
 
 	@include media-breakpoint-up(xs) {
