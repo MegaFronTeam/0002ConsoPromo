@@ -85,7 +85,7 @@
 
 		max-width: 100%;
 		@include media-breakpoint-up(md) {
-			max-height: calc(min(100vh, 100dvh) - var(--sPT) * 3 - 6rem);
+			max-height: calc(min(100vh, 100dvh) - var(--sPT) * 2 - 6rem);
 		}
 		max-height: calc(min(100vh, 100dvh) - var(--sPT) - 6rem);
 		height: 100%;
@@ -125,7 +125,7 @@
 			top: 0;
 			// width: 10%;
 			// width: auto;
-			object-fit: cover;
+			// object-fit: cover;
 			width: 100%;
 		}
 	}
