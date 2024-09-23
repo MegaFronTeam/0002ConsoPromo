@@ -175,6 +175,11 @@
 		flex-grow: 1;
 		padding-block: rem(16);
 		margin-top: 1rem;
+		@media (hover: hover) {
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+		}
 	}
 
 	&__container {

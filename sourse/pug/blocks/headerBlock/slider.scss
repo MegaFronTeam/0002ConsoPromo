@@ -301,25 +301,28 @@
 }
 
 .arrows-wrap {
-	width: 120px;
-	height: 60px;
+	width: 80px;
+	height: 40px;
 	// position: relative;
 	position: absolute;
 	float: left;
 	// left: -30px;
+	// width: 8px;
 	@include media-breakpoint-up(md) {
+		width: 88px;
 	}
 	margin-left: calc(var(--container-gutter-x));
 	// margin-left: 20px;
-	bottom: calc(40px + 100vh - 100svh);
+	bottom: calc(30px + 100vh - 100svh);
 	pointer-events: initial;
 	opacity: 1;
 }
 
 .prev-wrap,
 .next-wrap {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	aspect-ratio: 1;
+	// height: 60px;
 	float: left;
 	display: flex;
 	position: relative;
@@ -342,8 +345,13 @@
 .arrows-wrap .swiper-button-prev {
 	position: relative;
 	top: auto;
-	width: 32px;
-	height: 32px;
+	// @include media-breakpoint-up(sm) {
+	// 	// height: 32px;
+	// }
+	// width: 24px;\w100%
+	width: 100%;
+	aspect-ratio: 1;
+	// width: 32px;
 	margin-top: 0;
 	z-index: 10;
 	cursor: pointer;
@@ -360,7 +368,10 @@
 	.icon {
 		// stroke: currentColor;
 		// fill: none !important;
-		font-size: 14px;
+		font-size: 40px;
+		// @include media-breakpoint-up(sm) {
+		// }
+		// font-size: 10px;
 		position: absolute;
 	}
 	&:hover {
@@ -370,12 +381,12 @@
 
 .arrows-wrap .swiper-button-prev {
 	.icon {
-		transform: rotate(-90deg);
+		transform: rotate(90deg);
 	}
 }
 .arrows-wrap .swiper-button-next {
 	.icon {
-		transform: rotate(90deg);
+		transform: rotate(-90deg);
 	}
 }
 
