@@ -548,8 +548,8 @@ iframe {
 .headerBlock {
 	.video-play-toggle {
 		@include media-breakpoint-up(sm) {
-			bottom: 3.75rem;
-			left: calc(1.15rem + var(--container-gutter-x));
+			bottom: 5.75rem;
+			left: calc(2.15rem + var(--container-gutter-x));
 		}
 		left: calc(0.5rem + var(--container-gutter-x));
 		bottom: calc(2.75rem + 100vh - 100svh);
