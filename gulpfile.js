@@ -1,5 +1,5 @@
 "use strict";
-let publicPath = "public",
+let publicPath = "public_html",
 	sourse = "sourse",
 	destSprite = "../_sprite.scss",
 	destSpriteC = "../_spriteC.scss";
