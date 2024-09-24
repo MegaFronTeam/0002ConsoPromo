@@ -1,8 +1,11 @@
 :root {
 	--base-color: #{$body-color};
 	--base-color-inverse: #fff;
+	// --base-color: #fff;
+	// --base-color-inverse: #{$body-color};
 }
 .top-nav {
+	background-color: rgba($color: #fff, $alpha: 0.85);
 	&__line {
 		background-color: #fff;
 		height: 2rem;
@@ -89,10 +92,10 @@
 	}
 }
 
-.top-nav--white {
-	--base-color: #fff;
-	--base-color-inverse: #{$body-color};
-}
+// .top-nav--white {
+// 	--base-color: #fff;
+// 	--base-color-inverse: #{$body-color};
+// }
 
 @include media-breakpoint-down(md) {
 	.top-nav--search-open {

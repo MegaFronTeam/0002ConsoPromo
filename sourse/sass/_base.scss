@@ -520,9 +520,9 @@ iframe {
 	border-radius: 0.75rem;
 	transition: background-color 0.25s linear;
 	z-index: 1;
-	right: 0.75rem;
+	left: var(--container-gutter-x);
 	// bottom: 0.75rem;x
-	bottom: calc(0.75rem);
+	bottom: calc(1.75rem);
 	cursor: pointer;
 	z-index: 10;
 	&:hover {
@@ -548,11 +548,11 @@ iframe {
 .headerBlock {
 	.video-play-toggle {
 		@include media-breakpoint-up(sm) {
-			right: 3.75rem;
 			bottom: 3.75rem;
+			left: calc(1.15rem + var(--container-gutter-x));
 		}
-		right: 1.75rem;
-		bottom: calc(1.75rem + 100vh - 100svh);
+		left: calc(0.5rem + var(--container-gutter-x));
+		bottom: calc(2.75rem + 100vh - 100svh);
 	}
 }
 
