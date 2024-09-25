@@ -46,7 +46,7 @@
 	@include media-breakpoint-up(md) {
 	}
 	@include media-breakpoint-down(sm) {
-		padding-top: var(--line-h, 0);
+		padding-top: var(--line-h, 0px);
 		padding-bottom: 0;
 	}
 

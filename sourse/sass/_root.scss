@@ -32,6 +32,7 @@
 	@include media-breakpoint-up(md) {
 		// --sPT: calc(#{rem(120)});
 	}
+	--line-h: 0px;
 	--sPB: calc(65px + env(safe-area-inset-top));
 	--sTPB: #{rem(40)};
 

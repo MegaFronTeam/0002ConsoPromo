@@ -262,6 +262,14 @@ function eventHandler() {
 			$(this).addClass("paused");
 		}
 	});
+
+	$(".line-top__close").on("click", function () {
+		$(this)
+			.closest(".line-top")
+			.fadeOut(function () {
+				$(this).remove();
+			});
+	});
 }
 
 if (document.readyState !== "loading") {

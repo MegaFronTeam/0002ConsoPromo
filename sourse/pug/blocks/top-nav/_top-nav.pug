@@ -22,10 +22,11 @@ mixin mob-mnu()
 	//  мобильное меню
 mixin top-nav() 
 	+b.line-top.text-center Первый заказ на новинки со скидкой 10%. Промокод ZAKAZ10
-	style.
-		:root{
-			--line-h: 36px;
-		}
+		+e.close
+		style.
+			:root{
+				--line-h: 36px;
+			}
 	// start top-nav
 	+b.top-nav.block-with-lazy.top-nav--white
 		+b.logo(href="/")
