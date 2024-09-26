@@ -9,8 +9,11 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 
+include ../blocks/top-nav/_top-nav.pug
+include ../blocks/footer/_footer.pug
+
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= null 
 	- let  bg= null
 
 block title
@@ -20,22 +23,10 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
-	main
-		+page-head(title,title, title, title , title,title, title, title, title,title, title, title)
-		.section.container 
-			mixin btn(a, t)
-				a( href= a).btn.btn-primary.link-modal-js= t
-			+btn("#modal-call", 'call')
-		.section.container
-			.col-8
-				+form-wrap
-					+input("input")
-					+input("select",'select')
-					+input("select",'select')(multiple)
-					button.btn.btn-primary(type="submit") submit
-		+sCatalog
-	+parts('footer')
+	+top-nav()
+	main(style="height: 100vh;") 
+
+	+footer
       
 
 

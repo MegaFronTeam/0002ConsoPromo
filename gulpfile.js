@@ -168,6 +168,16 @@ class gs {
 			.pipe(dest(publicPath + "/css"))
 			.pipe(browserSync.stream());
 	}
+	static baseStyles() {
+		const processors = [autoprefixer(), nested(), cssnano(), gcmq()];
+		return src(sourse + `/sass/base-style.scss`)
+			.pipe(sassGlob())
+			.pipe(sass.sync().on("error", sass.logError))
+			.pipe(postcss(processors, {syntax: pscss}))
+			.pipe(rename({suffix: ".min", prefix: ""}))
+			.pipe(dest(publicPath + "/css"))
+			.pipe(browserSync.stream());
+	}
 
 	static bootstrapstyles() {
 		const processors = [autoprefixer(), nested(), cssnano(), gcmq()];
@@ -363,6 +373,17 @@ class gs {
 			[
 				sourse + "/sass/**/*.css",
 				sourse + "/sass/**/*.scss",
+				`!${sourse}/sass/custom-bootstrap.scss`,
+				sourse + "/sass/**/*.sass",
+				`${sourse}/pug/blocks/**/*.scss`,
+			],
+			{usePolling: true},
+			gs.baseStyles
+		);
+		watch(
+			[
+				sourse + "/sass/**/*.css",
+				sourse + "/sass/**/*.scss",
 				`!${sourse}/sass/_base.scss`,
 				`!${sourse}/sass/_root.scss`,
 				`!${sourse}/sass/_fonts.scss`,
@@ -391,7 +412,7 @@ export let imgAll = series(gs.cleanimg, gs.img);
 export let libs = series(gs.cleanlibs, gs.copyLibs);
 export let sprite = series(gs.svg, gs.svgCopy);
 export let sprite2 = series(gs.svgC, gs.svgCopyC);
-export let styles = parallel(gs.bootstrapstyles, gs.styles);
+export let styles = parallel(gs.bootstrapstyles, gs.styles, gs.baseStyles);
 
 export default series(
 	gs.common,

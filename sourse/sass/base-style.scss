@@ -1,0 +1,38 @@
+$output-bourbon-deprecation-warnings: false;
+// @use "sass:list";
+// @use "sass:map";
+@use "sass:math";
+
+// @use "sass:meta";
+
+// @import "mq";
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "custom-bootstrap.min.css";
+
+// @import "../../node_modules/rfs/scss";
+// @import "./node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss";
+// @import "./node_modules/swiper/swiper.scss";
+
+@import "mixin";
+@import "fonts";
+// @import "bootstrap-theme/bootstrap";
+
+// Option B: Include parts of Bootstrap
+
+// v5
+
+// Layout & components
+
+@import "./node_modules/bootstrap/scss/functions";
+@import "vars_base";
+@import "vars";
+@import "./node_modules/bootstrap/scss/mixins";
+
+@import "root";
+@import "base";
+
+@import "../pug/blocks/mixin-wrap/_mixin-wrap.scss";
+@import "../pug/blocks/top-nav/_top-nav.scss";
+@import "../pug/blocks/top-nav/_navMenu.scss";
+@import "../pug/blocks/sCards/sCards.scss";
+@import "../pug/blocks/footer/_footer.scss";

@@ -1,9 +1,16 @@
 :root {
-	--base-color: #{$body-color};
-	--base-color-inverse: #fff;
+	.main-page {
+		--base-color: #{$body-color};
+		--base-color-inverse: #fff;
+	}
 	// --base-color: #fff;
 	// --base-color-inverse: #{$body-color};
 }
+
+.main-page .top-nav {
+	background-color: transparent;
+}
+
 .top-nav {
 	background-color: rgba($color: #fff, $alpha: 0.85);
 	&__line {
@@ -92,10 +99,10 @@
 	}
 }
 
-// .top-nav--white {
-// 	--base-color: #fff;
-// 	--base-color-inverse: #{$body-color};
-// }
+.main-page .top-nav--white {
+	--base-color: #fff;
+	--base-color-inverse: #{$body-color};
+}
 
 @include media-breakpoint-down(md) {
 	.top-nav--search-open {
