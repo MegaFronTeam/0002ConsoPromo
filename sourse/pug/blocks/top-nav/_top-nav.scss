@@ -117,6 +117,7 @@
 	position: relative;
 	cursor: pointer;
 	@include mt;
+	color: var(--base-color);
 	svg {
 		fill: none;
 		stroke: currentColor;
