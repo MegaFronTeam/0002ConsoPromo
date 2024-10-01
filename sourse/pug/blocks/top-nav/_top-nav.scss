@@ -1,7 +1,7 @@
 :root {
+	--base-color: #{$body-color};
+	--base-color-inverse: #fff;
 	.main-page {
-		--base-color: #{$body-color};
-		--base-color-inverse: #fff;
 	}
 	// --base-color: #fff;
 	// --base-color-inverse: #{$body-color};
@@ -97,6 +97,25 @@
 	.container {
 		position: relative;
 	}
+
+	.logo {
+		@include a-cent1();
+		position: absolute !important;
+		display: flex;
+		color: var(--base-color);
+		[fill="white"] {
+			fill: currentColor;
+		}
+		svg {
+			width: auto;
+			height: 24px;
+			@include media-breakpoint-down(sm) {
+				height: 20px;
+			}
+		}
+
+		text-align: center;
+	}
 }
 
 .main-page .top-nav--white {
@@ -152,22 +171,4 @@
 
 .opacity-0 {
 	opacity: 0;
-}
-
-.logo {
-	@include a-cent1();
-	display: flex;
-	color: var(--base-color);
-	[fill="white"] {
-		fill: currentColor;
-	}
-	svg {
-		width: auto;
-		height: 24px;
-		@include media-breakpoint-down(sm) {
-			height: 20px;
-		}
-	}
-
-	text-align: center;
 }
