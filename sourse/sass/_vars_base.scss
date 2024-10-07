@@ -1,6 +1,6 @@
 $default-font: "Commissioner";
 $addr: "../fonts/";
-$file-format: woff2;
+$file-format: ttf;
 $rfs-rem-value: 16 !default;
 $em-base: $rfs-rem-value * 1px;
 $small: rem(14);
@@ -14,6 +14,20 @@ $rfs-breakpoint: 1200px !default;
 //   'white': #ffffff,
 //   'black': $body-color,
 // ) !default;
+
+@include font-face(
+	$default-font,
+	$addr + "Commissioner/Commissioner-VariableFont_FLAR,VOLM,slnt,wght",
+	100 900,
+	$file-formats: $file-format
+);
+
+@include font-face(
+	"Tenor Sans",
+	$addr + "Tenor_Sans/TenorSans-Regular",
+	100 900,
+	$file-formats: $file-format
+);
 
 $font-family-sans-serif: $default-font, Arial, Helvetica, sans-serif;
 

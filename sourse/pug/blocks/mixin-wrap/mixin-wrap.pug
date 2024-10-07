@@ -32,7 +32,7 @@ mixin search()
 				input(type="text" placeholder="Поиск  " inputmode='search')
 				button(type="button")
 					+icon("close")
-		+e.body.d-md-none
+		+e.body.d-none
 			.row
 				mixin cardS(i,t)
 					// start card 
@@ -48,7 +48,7 @@ mixin search()
 				- for (var x = 0; x < 3; x++)
 					+cardS(3,'только для тебя')
 					+cardS(4,'аксессуары')
-		+e.footer.d-md-none
+		+e.footer.d-none
 			a.btn.btn-primary.w-100(href="#") Все результаты поиска 
 		
 

@@ -106,7 +106,29 @@
 
 @include media-breakpoint-down(md) {
 	.top-nav--search-open {
-		background-color: #fff;
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			inset: 0;
+			// @include mt;
+			transition-delay: 0.3s;
+			// background-color: #fff;
+		}
+	}
+	.search-block,
+	.main-page .top-nav--white.top-nav--search-open,
+	.top-nav--search-open {
+		.icon-btn {
+			position: relative;
+		}
+		.toggle-menu-mobile,
+		.icon-btn,
+		.logo {
+			z-index: 3;
+		}
+		// background-color: #fff;
+
 		--base-color: #{$body-color};
 		--base-color-inverse: #fff;
 	}

@@ -72,6 +72,13 @@
 .search-block {
 	position: absolute;
 	display: none;
+	.search {
+		margin: 0;
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
 	&.shown {
 		display: block;
 	}
@@ -94,6 +101,7 @@
 
 	@include media-breakpoint-down(md) {
 		background-color: #fff;
+		z-index: -1;
 		&__header,
 		&__body,
 		&__footer {
@@ -157,11 +165,24 @@
 	}
 
 	@include media-breakpoint-down(md) {
-		&.shown {
-			display: flex;
+		background-color: #fff;
+		display: flex;
+		@include mt;
+		&::after {
+			content: "";
+			height: calc(300% + var(--line-h));
+			left: 0;
+			background-color: #fff;
+			bottom: 99%;
+			z-index: -1;
+			position: absolute;
+			width: 100%;
+		}
+		&:not(.shown) {
+			translate: 0 calc(-200% - var(--line-h));
 		}
 		flex-direction: column;
-		height: calc(min(100vh, 100dvh) - 60px - var(--line-h));
+		max-height: calc(min(100vh, 100dvh) - 60px - var(--line-h));
 		&__header {
 			padding-bottom: 1rem;
 		}

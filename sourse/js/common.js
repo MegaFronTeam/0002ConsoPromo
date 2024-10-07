@@ -12,7 +12,7 @@ function eventHandler() {
 		if (sectionCards) {
 			sectionCards.forEach(section => {
 				const nextParentSection = section.parentElement.nextElementSibling;
-				console.log("next", nextParentSection);
+				// console.log("next", nextParentSection);
 
 				// const cards = section.querySelectorAll(".card");
 				nextParentSection.insertAdjacentHTML("afterbegin", section.outerHTML);
