@@ -205,7 +205,9 @@ function eventHandler() {
 	const menu = document.querySelector(".menu-mobile .menu");
 	menu.addEventListener("click", function (e) {
 		const targetLi = e.target.closest("li:has(ul)");
-		if (e.target.closest("a")) return;
+		if (e.target.closest("a")) {
+			e.preventDefault();
+		}
 		if (targetLi) {
 			console.log("target", e.target);
 
