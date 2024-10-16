@@ -205,12 +205,13 @@ function eventHandler() {
 	const menu = document.querySelector(".menu-mobile .menu");
 	menu.addEventListener("click", function (e) {
 		const targetLi = e.target.closest("li:has(ul)");
-		if (e.target.closest("li:has(ul) > a")) {
+		// if (e.target.closest("li:has(ul) > a")) {
+		// }
+		if (
+			(targetLi && !e.target.closest("a")) ||
+			e.target.closest("li:has(ul) > a")
+		) {
 			e.preventDefault();
-		}
-		if (targetLi) {
-			console.log("target", e.target);
-
 			targetLi.classList.toggle("menu__item--open");
 		}
 	});
