@@ -66,7 +66,7 @@ mixin parts(elem)
 	div(id=`${elem}Wrap`)
 
 mixin productCard(i, title, havePrice, newP, oldP, btn)
-	+b.product-card
+	+b.product-card.A(href='#')
 		+e.slider--js
 			+icon('heart')
 			.swiper-wrapper
@@ -86,17 +86,17 @@ mixin productCard(i, title, havePrice, newP, oldP, btn)
 				+e.item.descr SM 240110
 			if !havePrice
 				+e.item.colors
-					a.span(href='#', style='background-color:#F6F1D9;')
-					a.span(href='#', style='background-color:#A3985A;')
-					a.span(href='#', style='background-color:#E6BBC1;')
+					.span(style='background-color:#F6F1D9;')
+					.span(style='background-color:#A3985A;')
+					.span(style='background-color:#E6BBC1;')
 			if havePrice
 				+e.item.have-price= newP 
 					if oldP
 						span #{ oldP}
 				+e.item.colors
-					a.span(href='#', style='background-color:#F6F1D9;')
-					a.span(href='#', style='background-color:#A3985A;')
-					a.span(href='#', style='background-color:#E6BBC1;')
+					.span(style='background-color:#F6F1D9;')
+					.span(style='background-color:#A3985A;')
+					.span(style='background-color:#E6BBC1;')
 			if !havePrice
 				+e.item.price Показать цену
 			if btn
