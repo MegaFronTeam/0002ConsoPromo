@@ -1,0 +1,11 @@
+mixin s404(data)
+	// start s404
+	+b.SECTION.s404.section#s404&attributes(attributes)
+		+img('img/s404-bg.png').bg.d-none.d-md-block
+		.container
+			+e.content
+				h2 Извините, страница<br>не найдена
+				p Можете #[a(href='#') перейти на главную страницу сайта] или посмотреть подборку популярных товаров
+				+e.btn.btn-primary.btn(href='#') Перейти в каталог
+		+img('img/s404-bg-sm.png').bg.img-sm.d-md-none
+	// end s404

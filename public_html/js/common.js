@@ -63,6 +63,69 @@ function eventHandler() {
 		watchOverflow: true,
 	});
 
+  /* product slider */
+  let prodItemSliders = document.querySelectorAll('.product-card__slider--js');
+
+  for (let sliderCont of prodItemSliders) {
+    let slider = new Swiper(sliderCont, {
+      slidesPerView: 1,
+      effect: 'fade',
+      watchOverflow: true,
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+    let pagination = sliderCont.querySelector('.swiper-pagination');
+    sliderCont.addEventListener('mousemove', function () {
+      let slidesAmount = 0;
+
+      for (let slide of slider.slides) {
+        if (!slide.classList.contains('swiper-slide-duplicate')) {
+          slidesAmount++;
+        }
+      } //-
+
+
+      let rect = this.getBoundingClientRect();
+      let x = event.clientX - rect.left;
+      slider.slideTo(Math.floor(x * slidesAmount / this.offsetWidth));
+    }, {
+      passive: true
+    });
+    sliderCont.addEventListener('mouseenter', function () {
+      pagination.classList.add('active');
+    });
+    sliderCont.addEventListener('mouseleave', function () {
+      pagination.classList.remove('active');
+      slider.slideTo(0);
+    });
+  }
+
+  
+	const swiperNewsRecently = new Swiper(".sSlider--recently .sSlider__slider--js", {
+		slidesPerView: 2,
+		navigation: {
+			nextEl: "#sSlider .swiper-button-next",
+			prevEl: "#sSlider .swiper-button-prev",
+		},
+		spaceBetween: 8,
+    breakpoints: {
+      576: {
+        spaceBetween: 16,
+        slidesPerView: 3,
+      },
+      1440: {
+        slidesPerView: 4,
+      },
+    },
+	});
+
+
 	// const swiper4 = new Swiper(".sBanners__slider--js", {
 	// 	// slidesPerView: 5,
 	// 	...defaultSl,

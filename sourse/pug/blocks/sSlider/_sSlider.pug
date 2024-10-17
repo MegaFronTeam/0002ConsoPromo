@@ -1,0 +1,18 @@
+
+mixin sSlider(title)
+	// start sSlider
+	+b.SECTION.sSlider.sSlider--recently.section#sSlider&attributes(attributes)
+		.container
+			+e.header
+				+e.title=title
+				.arrow-wrap: +arrow
+			+e.slider--js
+				.swiper-wrapper
+					.swiper-slide: +productCard(1, 'Юбка карандаш', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(2, 'Брюки палаццо', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(3, 'Базовый джемпер', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(4, 'Жакет укороченный', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(1, 'Юбка карандаш', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(1, 'Юбка карандаш', true, '11 990 ₽', '13 990 ₽')
+					.swiper-slide: +productCard(2, 'Брюки палаццо', true, '11 990 ₽', '13 990 ₽')
+	// end sSlider

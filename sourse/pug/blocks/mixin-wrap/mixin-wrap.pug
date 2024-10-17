@@ -65,6 +65,44 @@ mixin parts(elem)
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
 
+mixin productCard(i, title, havePrice, newP, oldP, btn)
+	+b.product-card
+		+e.slider--js
+			+icon('heart')
+			.swiper-wrapper
+				.swiper-slide
+					+e.img-wrap
+						+img(`img/product-${i}.png`)
+				.swiper-slide
+					+e.img-wrap
+						+img(`img/product-${i+1}.png`)
+				.swiper-slide
+					+e.img-wrap
+						+img(`img/product-${i+3}.png`)
+			.swiper-pagination
+		+e.wrapper.text-center
+			+e.item.title-card= title
+			if !havePrice
+				+e.item.descr SM 240110
+			if !havePrice
+				+e.item.colors
+					a.span(href='#', style='background-color:#F6F1D9;')
+					a.span(href='#', style='background-color:#A3985A;')
+					a.span(href='#', style='background-color:#E6BBC1;')
+			if havePrice
+				+e.item.have-price= newP 
+					if oldP
+						span #{ oldP}
+				+e.item.colors
+					a.span(href='#', style='background-color:#F6F1D9;')
+					a.span(href='#', style='background-color:#A3985A;')
+					a.span(href='#', style='background-color:#E6BBC1;')
+			if !havePrice
+				+e.item.price Показать цену
+			if btn
+				+e.btn.btn.btn-primary(href='#')= btn
+
+
 
 mixin playBtn(video1)
 	.video-play-toggle(data-video= video1)
