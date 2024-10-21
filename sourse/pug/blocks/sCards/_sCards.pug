@@ -10,12 +10,13 @@ mixin card(i,t)
 	// start card 
 	+b.card
 		+e.wrap
-			+e.img(href="#")
-				+b.img(src=`img/card-${i}.jpg`, alt=`card${i}`)
-			+e.body
-				+e.title(href="#")
-					= t
-				+e.text Смотреть
+			+e.centered
+				+e.img(href="#")
+					+b.img(src=`img/card-${i}.jpg`, alt=`card${i}`)
+				+e.body
+					+e.title(href="#")
+						= t
+					+e.text Смотреть
 
 mixin sCards2(data)
 	// start sCards
