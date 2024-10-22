@@ -11,14 +11,14 @@ mixin mob-mnu()
 		+e.inner
 			+e.container
 				+mnu()
-		//- +e.footer
-		//- 	+e.container
-		//- 		.small Подписаться на новости
-		//- 		+b.icons-group
-		//- 			+e.icon-wrap(href='#'): +icon('telegram')
-		//- 			+e.icon-wrap(href='#'): +icon('vk')
-		//- 			+e.icon-wrap(href='#'): +icon('youtube')
-		//- 			+e.icon-wrap(href='#'): +icon('dzen')
+		+e.footer
+			+e.container
+				.small Подписаться на новости
+				+b.icons-group
+					+e.icon-wrap(href='#'): +icon('telegram')
+					+e.icon-wrap(href='#'): +icon('vk')
+					+e.icon-wrap(href='#'): +icon('youtube')
+					+e.icon-wrap(href='#'): +icon('dzen')
 	//  мобильное меню
 mixin top-nav() 
 	+b.line-top.text-center Первый заказ на новинки со скидкой 10%. Промокод ZAKAZ10
