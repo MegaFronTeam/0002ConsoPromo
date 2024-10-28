@@ -9,6 +9,7 @@
 	}
 
 	p {
+		margin-inline: 0 !important;
 		margin-bottom: rem(10);
 		&:last-child {
 			margin-bottom: 0;
