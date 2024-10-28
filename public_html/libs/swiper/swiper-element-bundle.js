@@ -1,5 +1,5 @@
 /**
- * Swiper Custom Element 11.1.14
+ * Swiper Custom Element 11.1.12
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: September 12, 2024
+ * Released on: September 1, 2024
  */
 
 (function () {
@@ -2716,7 +2716,7 @@
         data.isTouched = false;
       }
     }
-    if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== targetEl && (e.pointerType === 'mouse' || e.pointerType !== 'mouse' && !targetEl.matches(data.focusableElements))) {
+    if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== targetEl) {
       document.activeElement.blur();
     }
     const shouldPreventDefault = preventDefault && swiper.allowTouchMove && params.touchStartPreventDefault;
@@ -2794,9 +2794,6 @@
       } else if (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate()) {
         return;
       }
-    }
-    if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== e.target && e.pointerType !== 'mouse') {
-      document.activeElement.blur();
     }
     if (document.activeElement) {
       if (e.target === document.activeElement && e.target.matches(data.focusableElements)) {
@@ -5269,7 +5266,7 @@
     function getEl(el) {
       let res;
       if (el && typeof el === 'string' && swiper.isElement) {
-        res = swiper.el.querySelector(el) || swiper.hostEl.querySelector(el);
+        res = swiper.el.querySelector(el);
         if (res) return res;
       }
       if (el) {
@@ -6602,7 +6599,6 @@
       clearTimeout(allowTouchMoveTimeout);
       swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
       allowTouchMoveTimeout = setTimeout(() => {
-        if (swiper.destroyed) return;
         allowTouchMove();
       });
     }
@@ -9675,7 +9671,7 @@
   }
 
   /**
-   * Swiper 11.1.14
+   * Swiper 11.1.12
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9683,7 +9679,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: September 12, 2024
+   * Released on: September 1, 2024
    */
 
 
@@ -10010,7 +10006,7 @@
   }
 
   /**
-   * Swiper Custom Element 11.1.14
+   * Swiper Custom Element 11.1.12
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -10018,7 +10014,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: September 12, 2024
+   * Released on: September 1, 2024
    */
 
 
