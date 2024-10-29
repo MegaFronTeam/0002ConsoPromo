@@ -39,6 +39,9 @@ function Showcase() {
 				autoplay: false,
 				// mousewheel: true,
 				loop: false,
+				autoplay: {
+					delay: 3000,
+				},
 				pagination: {
 					el: this.querySelector(".showcase-captions"),
 					clickable: true,
