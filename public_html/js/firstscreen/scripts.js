@@ -92,12 +92,12 @@ $(document).ready(function() {
 			} , 600 );
 		}
 		
-		TweenMax.to($("#showcase-holder"), 0.4, {force3D:true, opacity:1, scale:1, delay:0.2, ease:Power2.easeOut});//modified time
+		TweenMax.to($(".showcase-holder"), 0.4, {force3D:true, opacity:1, scale:1, delay:0.2, ease:Power2.easeOut});//modified time
 		
 		// Fading In Small Carousel elements on Finised
 		var tlCarousel = new TimelineLite();
-		tlCarousel.set($("#showcase-carousel-slider .swiper-slide"), {x: 300, opacity:0});
-		$("#showcase-carousel-slider .swiper-slide").each(function(index, element) {
+		tlCarousel.set($(".showcase-carousel-slider .swiper-slide"), {x: 300, opacity:0});
+		$(".showcase-carousel-slider .swiper-slide").each(function(index, element) {
 			tlCarousel.to(element, 1.4, {x:0, opacity:1, delay:0.7, ease:Power3.easeOut}, index * 0.1)
 		});
 		
@@ -125,7 +125,7 @@ $(document).ready(function() {
 		} , 800 );
 		
 		setTimeout( function(){				
-			$('#showcase-holder').removeClass("disabled");
+			$('.showcase-holder').removeClass("disabled");
 		} , 1900 );
 		
 	
@@ -142,13 +142,13 @@ Function Showcase
 	function Showcase() {
 		
 	
-		if( $('#showcase-slider').length > 0 ){	
+		if( $('.showcase-slider').length > 0 ){	
 		
 			
 			var titles = [];
 			var subtitle = [];
 			var counter = [];
-			$('#showcase-slider .swiper-slide').each(function(i) {
+			$('.showcase-slider .swiper-slide').each(function(i) {
 			  	titles.push($(this).data('title'));
 				subtitle.push($(this).data('subtitle'))
 				counter.push($(this).data('number'))
@@ -316,7 +316,7 @@ Function Showcase
 			var swiper = new Swiper(".swiper-container", swiperOptions);			
 			
 			
-			$("#showcase-slider .swiper-slide").find(".title").each(function(i) {				
+			$(".showcase-slider .swiper-slide").find(".title").each(function(i) {				
 				$(this).wrap( "<div class='outer'><div class='inner'></div></div>" );
 			});
 			
@@ -331,14 +331,14 @@ Function Showcase
 				mouseX = event.pageX;
 				mouseY = event.pageY;
 			});
-			$('#showcase-tilt').each(function() {
+			$('.showcase-tilt').each(function() {
 				var thisWidth = $(this).width();
 				var thisHeight = $(this).height();
 				var thisOffset = $(this).offset();
 				$(document).mousemove(function() {
 					var horTilt = ((mouseX / thisWidth) * (maxTilt * 2)) - maxTilt;
 					var verTilt = (((mouseY - thisOffset.top) / thisHeight) * (maxTilt * 2)) - maxTilt;					
-					TweenMax.to('#showcase-tilt', 1,{rotationY: horTilt, rotationX: verTilt, scale: 1.05, ease:Power1.easeOut});
+					TweenMax.to('.showcase-tilt', 1,{rotationY: horTilt, rotationX: verTilt, scale: 1.05, ease:Power1.easeOut});
 				});
 			});
 			
@@ -349,12 +349,12 @@ Function Showcase
 				});
 				
 				
-				$('#showcase-slider').on('mousedown touchstart', function() {				
+				$('.showcase-slider').on('mousedown touchstart', function() {				
 					$('body').addClass('scale-up');
 					TweenMax.to('#ball', 0.2,{transformOrigin: '20px 20px', borderWidth: '1px', borderColor:'#fff', scale: 2});
 					
 				});			
-				$('#showcase-slider').on('mouseup touchend', function() {				
+				$('.showcase-slider').on('mouseup touchend', function() {				
 					$('body').removeClass('scale-up');
 					TweenMax.to('#ball', 0.3,{borderWidth: '2px', scale:1, x: -20, y: -20, borderColor:'#999999', });
 				});
@@ -382,11 +382,11 @@ Function Showcase
 	function ShowcaseCarousel() {
 		
 	
-		if( $('#showcase-carousel-slider').length > 0 ){
+		if( $('.showcase-carousel-slider').length > 0 ){
 			
 			$("footer").addClass("showcase-footer");
 			
-			$("#showcase-carousel-slider .img-mask").wrap( "<div class='img-mask-wrap'></div>" );
+			$(".showcase-carousel-slider .img-mask").wrap( "<div class='img-mask-wrap'></div>" );
 
 			var swiperOptions = {
 				direction: "horizontal",
@@ -455,12 +455,12 @@ Function Showcase
 			});
 			
 			
-			$('#showcase-carousel-slider').on('mousedown touchstart', function() {				
+			$('.showcase-carousel-slider').on('mousedown touchstart', function() {				
 				$('body').addClass('scale-up');
 				TweenMax.to('#ball', 0.2,{transformOrigin: '20px 20px', borderWidth: '1px', borderColor:'#fff', scale: 2});
 				
 			});			
-			$('#showcase-carousel-slider').on('mouseup touchend', function() {				
+			$('.showcase-carousel-slider').on('mouseup touchend', function() {				
 				$('body').removeClass('scale-up');
 				TweenMax.to('#ball', 0.3,{borderWidth: '2px', scale:1, x: -20, y: -20, borderColor:'#999999', });
 			});

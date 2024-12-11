@@ -510,26 +510,28 @@ iframe {
 	--color-background-blur: rgb(255, 255, 255, 0.9);
 	--color-background-icon: rgb(255, 255, 255, 0.3);
 	--color-background-overlay: rgb(239, 239, 239, 0.6);
-	display: inline-flex;
-	align-items: center;
+	display: flex;
 	font-size: 0.75rem;
-	font-weight: 400;
-	letter-spacing: 0px;
-	line-height: 1rem;
-	min-height: 1rem;
-	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	width: 1.5rem;
 	height: 1.5rem;
 	background-color: var(--color-background-icon);
 	border-radius: 0.75rem;
 	transition: background-color 0.25s linear;
-	z-index: 1;
 	left: var(--container-gutter-x);
 	// bottom: 0.75rem;x
 	bottom: calc(1.75rem);
 	cursor: pointer;
 	z-index: 10;
+	padding: 0;
+	svg {
+		margin: 0 !important;
+		width: rem(24);
+		position: relative;
+		left: rem(-2);
+		top: rem(-1);
+		height: rem(24);
+	}
 	&:hover {
 		background-color: var(--color-background-overlay);
 	}

@@ -13,6 +13,7 @@
 		<!-- use on main page-->
 		<link href="css/main.min.css" rel="stylesheet"/>
 		<!-- /use on main page-->
+		<link href="css/styles.css" rel="stylesheet"/>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -314,290 +315,292 @@
 			</div>
 			<!--  мобильное меню-->
 			<!-- end top-nav-->
-			<main>
-				<!-- start s404-->
-				<section class="s404 section" id="s404"><img class="bg d-none d-md-block" src="img/s404-bg.png" alt=""/>
-					<div class="container">
-						<div class="s404__content">
-							<h2>Извините, страница<br>не найдена</h2>
-							<p>Можете <a href="#">перейти на главную страницу сайта</a> или посмотреть подборку популярных товаров</p>
-							<a class="s404__btn btn-primary btn" href="#">Перейти в каталог
-							</a>
-						</div>
-					</div><img class="bg img-sm d-md-none" src="img/s404-bg-sm.png" alt=""/>
-				</section>
-				<!-- end s404-->
-				<!-- start sSlider-->
-				<section class="sSlider sSlider sSlider--recently section" id="sSlider">
-					<div class="container">
-						<div class="sSlider__header">
-							<div class="sSlider__title">Возможно вас заинтересует
+			<main class="main">
+				<div class="content blog-post__content">
+					<!-- start s404-->
+					<section class="s404 section" id="s404"><img class="bg d-none d-md-block" src="img/s404-bg.png" alt=""/>
+						<div class="container">
+							<div class="s404__content">
+								<h2>Извините, страница<br>не найдена</h2>
+								<p>Можете <a href="#">перейти на главную страницу сайта</a> или посмотреть подборку популярных товаров</p>
+								<a class="s404__btn btn-primary btn" href="#">Перейти в каталог
+								</a>
 							</div>
-							<div class="arrow-wrap">
-								<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
-									<svg class="icon icon-chevron-left ">
-										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-									</svg>
+						</div><img class="bg img-sm d-md-none" src="img/s404-bg-sm.png" alt=""/>
+					</section>
+					<!-- end s404-->
+					<!-- start sSlider-->
+					<section class="sSlider sSlider sSlider--recently section" id="sSlider">
+						<div class="container">
+							<div class="sSlider__header">
+								<div class="sSlider__title">Возможно вас заинтересует
 								</div>
-								<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
-									<svg class="icon icon-chevron-right ">
-										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-									</svg>
-								</div>
-							</div>
-						</div>
-						<div class="sSlider__slider sSlider__slider--js">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Юбка карандаш
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Брюки палаццо
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-6.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Базовый джемпер
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-7.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Жакет укороченный
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Юбка карандаш
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Юбка карандаш
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="swiper-slide">
-									<a class="product-card" href="#">
-										<div class="product-card__slider product-card__slider--js">
-											<svg class="icon icon-heart ">
-												<use xlink:href="img/svg/sprite.svg#heart"></use>
-											</svg>
-											<div class="swiper-wrapper">
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
-													</div>
-												</div>
-												<div class="swiper-slide">
-													<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
-													</div>
-												</div>
-											</div>
-											<div class="swiper-pagination"></div>
-										</div>
-										<div class="product-card__wrapper text-center">
-											<div class="product-card__item title-card">Брюки палаццо
-											</div>
-											<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
-											</div>
-											<div class="product-card__item colors">
-												<div class="span" style="background-color:#F6F1D9;"></div>
-												<div class="span" style="background-color:#A3985A;"></div>
-												<div class="span" style="background-color:#E6BBC1;"></div>
-											</div>
-										</div>
-									</a>
+								<div class="arrow-wrap">
+									<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>
+									</div>
+									<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+										<svg class="icon icon-chevron-right ">
+											<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+										</svg>
+									</div>
 								</div>
 							</div>
+							<div class="sSlider__slider sSlider__slider--js">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Юбка карандаш
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Брюки палаццо
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-6.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Базовый джемпер
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-7.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Жакет укороченный
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Юбка карандаш
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-1.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-4.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Юбка карандаш
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a class="product-card" href="#">
+											<div class="product-card__slider product-card__slider--js">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-2.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-3.png" alt=""/>
+														</div>
+													</div>
+													<div class="swiper-slide">
+														<div class="product-card__img-wrap"><img src="img/product-5.png" alt=""/>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<div class="product-card__wrapper text-center">
+												<div class="product-card__item title-card">Брюки палаццо
+												</div>
+												<div class="product-card__item have-price">11 990 ₽<span>13 990 ₽</span>
+												</div>
+												<div class="product-card__item colors">
+													<div class="span" style="background-color:#F6F1D9;"></div>
+													<div class="span" style="background-color:#A3985A;"></div>
+													<div class="span" style="background-color:#E6BBC1;"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</section>
-				<!-- end sSlider-->
+					</section>
+					<!-- end sSlider-->
+				</div>
 			</main>
 			<footer class="footer section">
 				<div class="container">

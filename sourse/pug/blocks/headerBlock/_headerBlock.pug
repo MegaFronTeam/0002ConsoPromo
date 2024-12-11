@@ -1,11 +1,11 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock.light-content&attributes(attributes)
-		#showcase-holder()
-			#showcase-holder-wrap
-				#showcase-tilt-wrap
-					#showcase-tilt()
-						#showcase-slider.swiper-container.swiper
+	+b.headerBlock.section.light-content&attributes(attributes)
+		#showcase-holder.showcase-holder()
+			#showcase-holder-wrap.showcase-holder-wrap
+				#showcase-tilt-wrap.showcase-tilt-wrap
+					#showcase-tilt().showcase-tilt
+						#showcase-slider.swiper-container.swiper.showcase-slider
 							.swiper-wrapper()
 								// Section Slide
 								.swiper-slide.swiper-slide-active(data-title='Sapfo Olive Oil' data-subtitle='Product Design' data-number='1')
