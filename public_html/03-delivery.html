@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" rel="stylesheet"/>
 		<link href="css/base-style.min.css" rel="stylesheet"/>
 		<!-- use on main page-->
 		<link href="css/main.min.css" rel="stylesheet"/>
@@ -167,6 +168,19 @@
 									</div>
 								</div>
 								<div class="search-block__footer d-none"><a class="btn btn-primary w-100" href="#">Все результаты поиска </a>
+								</div>
+								<div class="search-block__res-card"> 
+									<div class="custom-scroll">
+										<ul> 
+											<li><a href="#">Юбка с кашемиром</a></li>
+											<li><a href="#">Юбка с кашемиром</a></li>
+											<li><a href="#">Юбка с кашемиром</a></li>
+											<li><a href="#">Юбка карго</a></li>
+											<li><a href="#">Юбка карго</a></li>
+											<li><a href="#">Юбка с кашемиром</a></li>
+											<li><a href="#">Юбка с кашемиром</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -563,6 +577,69 @@
 			</div>
 		</div>
 		<!-- #modal-call-->
+		<div id="modal-sizes" style="display: none">
+			<div class="modal-win modal-win--md">
+				<div class="modal-win__title-table">Обмеры изделия (см)
+				</div>
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>RUS</th>
+								<th>IT</th>
+								<th>Длина изделия</th>
+								<th>Обхват по талии</th>
+								<th>Обхват по бедрам</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>-</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>40</td>
+								<td>38</td>
+								<td>76</td>
+								<td>54</td>
+								<td>82</td>
+							</tr>
+							<tr>
+								<td>42</td>
+								<td>40</td>
+								<td>76</td>
+								<td>58</td>
+								<td>86</td>
+							</tr>
+							<tr>
+								<td>44</td>
+								<td>42</td>
+								<td>76</td>
+								<td>62</td>
+								<td>90</td>
+							</tr>
+							<tr>
+								<td>46</td>
+								<td>44</td>
+								<td>77</td>
+								<td>66</td>
+								<td>94</td>
+							</tr>
+							<tr>
+								<td>48</td>
+								<td>46</td>
+								<td>77</td>
+								<td>70</td>
+								<td>98</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 		<!-- end modals-->
 		<div class="light-content d-none" id="magic-cursor">
 			<div id="ball">
@@ -596,6 +673,7 @@
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/select2/js/select2.min.js"> </script>
 		<script src="libs/select2/js/i18n/ru.js"> </script>
+		<script src="libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"> </script>
 		<!-- use on main page-->
 		<script src="js/firstscreen/ScrollMagic.min.js"></script>
 		<script src="js/firstscreen/animation.gsap.min.js"></script>

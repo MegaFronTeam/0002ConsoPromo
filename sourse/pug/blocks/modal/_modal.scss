@@ -14,6 +14,8 @@
 	width: rem(500);
 	// min-height: 100%; 
 	padding: 40px;
+  
+  border-radius: rem(10);
 
 	.modal-content {
 		// max-width: 485px;
@@ -25,6 +27,64 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+  &--md {
+    padding: rem(40);
+    width: rem(560) !important;
+  }
+
+  &__title-table {
+    font-size: rem(20);
+    font-weight: 500;
+
+    margin-bottom: rem(40);
+  }
+
+  .table-wrap {
+    
+		position: relative;
+		@include media-breakpoint-down(md) {
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+    
+    table {
+      width: 100%;
+    }
+
+    th {
+      font-weight: normal;
+      line-height: 1;
+      font-size: rem(14);
+    }
+    tr {
+      border-bottom: 1px solid #dcd7d3;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+    th, td {
+      text-align: center;
+    }
+
+    td, th {
+      padding: rem(12) rem(12);
+    }
+
+    td:nth-child(1),
+    td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    th {
+      vertical-align: bottom;
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: 15%;
+			}
+    }
+  }
+
 }
 
 a {

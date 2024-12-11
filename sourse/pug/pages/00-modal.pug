@@ -24,7 +24,13 @@ block pagecontent
 	
 	
 	+top-nav()
-	main(style="height: 100vh;") 
+	main
+		.section.container 
+			mixin btn(a, t)
+				a( href= a).btn.btn-primary.link-modal-js= t
+			.row
+				.col
+					+btn("#modal-sizes", 'Обмеры изделия')
 
 	+footer
       

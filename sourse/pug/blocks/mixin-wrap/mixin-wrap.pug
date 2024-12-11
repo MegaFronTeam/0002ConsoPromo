@@ -50,7 +50,16 @@ mixin search()
 					+cardS(4,'аксессуары')
 		+e.footer.d-none
 			a.btn.btn-primary.w-100(href="#") Все результаты поиска 
-		
+		+e.res-card 
+			.custom-scroll()
+				ul 
+					li: a(href="#") Юбка с кашемиром
+					li: a(href="#") Юбка с кашемиром
+					li: a(href="#") Юбка с кашемиром
+					li: a(href="#") Юбка карго
+					li: a(href="#") Юбка карго
+					li: a(href="#") Юбка с кашемиром
+					li: a(href="#") Юбка с кашемиром
 
 mixin page-head(t,...items)
 	+b.page-head

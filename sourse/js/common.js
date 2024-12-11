@@ -293,14 +293,17 @@ function eventHandler() {
 	$(".search-block ").on("input", "input", function () {
 		if ($(this).val().length > 0) {
 			$(this).next().addClass("active");
+      $(".search-block__res-card").addClass("active");
 		} else {
 			$(this).next().removeClass("active");
+      $(".search-block__res-card").removeClass("active");
 		}
 	});
 
 	$(".search-block button").on("click", function () {
 		$(this).prev().val("");
 		$(this).removeClass("active");
+    $(".search-block__res-card").removeClass("active");
 	});
 
 	document.addEventListener("click", function (e) {

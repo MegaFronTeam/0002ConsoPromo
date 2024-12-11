@@ -13,6 +13,13 @@ class JSCCommon {
 	static removeClass(elements, className) {
 		elements.forEach(el => el.classList.remove(className));
 	}
+  
+  static setCustomScrollbar() {
+		$(".custom-scroll").mCustomScrollbar({
+			theme: "minimal-dark",
+			alwaysShowScrollbar: true,
+		});
+	}
 	static modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
 		Fancybox.defaults.autoFocus = false;
@@ -422,6 +429,7 @@ class JSCCommon {
 		this.disabledBtn();
 		this.customSelect();
 		this.setScreen();
+    this.setCustomScrollbar()
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		// JSCCommon.animateScroll();
 
